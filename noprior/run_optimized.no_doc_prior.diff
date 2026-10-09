@@ -1,0 +1,20 @@
+--- run_optimized.py.bak_docprior	2026-10-07 13:26:16.421907126 +0000
++++ run_optimized.py	2026-10-07 13:28:20.754129942 +0000
+@@ -267,6 +267,7 @@
+     parser.add_argument("--disable_ms_ecc", action="store_true")
+     parser.add_argument("--disable_gated_graph", action="store_true")
+     parser.add_argument("--disable_focal_loss", action="store_true")
++    parser.add_argument("--no_doc_prior", action="store_true")
+     args = parser.parse_args()
+ 
+     if args.disable_ms_ecc:
+@@ -308,7 +309,8 @@
+                     num_graph_layers=args.num_graph_layers,
+                     focal_gamma=args.focal_gamma,
+                     focal_alpha=args.focal_alpha,
+-                    focal_lambda=args.focal_lambda)
++                    focal_lambda=args.focal_lambda,
++                    use_doc_prior=not args.no_doc_prior)
+     model.to(args.device)
+ 
+     if args.load_path != "":

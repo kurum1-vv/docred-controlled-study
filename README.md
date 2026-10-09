@@ -14,6 +14,7 @@ are means over five random seeds (42, 123, 456, 789, 2024).
 > **Per-seed logs.** All training/evaluation logs are bundled in `logs.tgz`
 > (extract with `tar xzf logs.tgz`); it contains `logs_v3/` (encoder comparison,
 > Re-DocRED, sensitivity) and `logs_v3_final/` (the 8-configuration BERT ablation).
+> The no-document-prior logs are in `noprior/logs_v3/` (see Sect. 5.1 below).
 
 ---
 
@@ -83,7 +84,7 @@ Configuration switches:
 | +CB-FL | `--disable_ms_ecc --disable_gated_graph --use_focal_loss --num_graph_layers 2` |
 | and the three 2-way / 3-way combinations | see `cfg_args` in `run_v3_experiments.sh` |
 
-Encoder-scale comparison (optional, Table/§ future):
+Encoder-scale comparison (Table 5, Sect. 4.7):
 ```bash
 bash run_v3_experiments.sh dl_large   # downloads roberta-large
 bash run_v3_experiments.sh e4
@@ -93,17 +94,35 @@ bash run_v3_experiments.sh e4
 
 | Configuration | F1 | IgnF1 | dF1 | p |
 |---|---|---|---|---|
-| EEGRNet backbone | 66.42 ± 0.17 | 64.98 | – | – |
-| + MS-ECC | 66.36 ± 0.13 | 64.97 | −0.06 | 0.547 |
-| + GR-GR | 66.16 ± 0.20 | 64.72 | −0.26 | 0.088 |
-| + CB-FL | 66.47 ± 0.31 | 65.05 | +0.05 | 0.736 |
-| + MS-ECC + GR-GR | 66.09 ± 0.13 | 64.73 | −0.33 | 0.008 |
-| + MS-ECC + CB-FL | 66.27 ± 0.35 | 64.87 | −0.15 | 0.448 |
-| + GR-GR + CB-FL | 66.26 ± 0.16 | 64.82 | −0.16 | 0.294 |
-| full (all three) | 65.91 ± 0.24 | 64.51 | −0.51 | 0.030 |
+| EEGRNet backbone | 66.42 ± 0.17 | 64.98 ± 0.18 | – | – |
+| + MS-ECC | 66.36 ± 0.13 | 64.97 ± 0.15 | −0.06 | 0.547 |
+| + GR-GR | 66.16 ± 0.20 | 64.72 ± 0.20 | −0.26 | 0.088 |
+| + CB-FL | 66.47 ± 0.31 | 65.05 ± 0.31 | +0.05 | 0.736 |
+| + MS-ECC + GR-GR | 66.09 ± 0.13 | 64.73 ± 0.12 | −0.33 | 0.008 |
+| + MS-ECC + CB-FL | 66.27 ± 0.35 | 64.87 ± 0.34 | −0.15 | 0.448 |
+| + GR-GR + CB-FL | 66.26 ± 0.16 | 64.82 ± 0.16 | −0.16 | 0.294 |
+| full (all three) | 65.91 ± 0.24 | 64.51 ± 0.21 | −0.51 | 0.030 |
 
 Per-seed logs are under `logs_v3/`; each `.log` contains the dev scores printed as
 `dev_rel : [P, R, F1]` and `dev_rel_ign : [...]`.
+
+### 5.1 No-document-prior control (Sect. 4.5.2)
+
+The paper reports a backbone retrained without the document-level relation
+prior; its dev F1 is statistically indistinguishable from the with-prior
+backbone, showing the prior does not explain the dev margin.
+
+| Configuration | F1 |
+|---|---|
+| backbone (with prior) | 66.42 ± 0.17 |
+| backbone (no prior) | 66.44 ± 0.20 |
+
+Artifacts are in `noprior/`: the runner (`run_noprior.sh`), the two source
+patches (`model_optimized.no_doc_prior.diff`, `run_optimized.no_doc_prior.diff`),
+the environment record (`NOPRIOR_INFO.txt`), and the five per-seed logs
+(`noprior/logs_v3/nop_base_s{42,123,456,789,2024}.log`). To reproduce: apply the
+two patches and run `bash run_noprior.sh` (it passes `--no_doc_prior` with the
+same BERT-base settings as the backbone runs).
 
 ## 6. Notes
 - `run_optimized.py` defaults to `--num_class 96`; always pass `--num_class 97`.

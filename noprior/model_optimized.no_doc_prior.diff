@@ -1,0 +1,30 @@
+--- model_optimized.py.bak_docprior	2026-10-07 13:26:16.421907126 +0000
++++ model_optimized.py	2026-10-07 13:28:20.754129942 +0000
+@@ -98,7 +98,8 @@
+                 num_graph_layers=3,
+                 focal_gamma=2.0,
+                 focal_alpha=0.25,
+-                focal_lambda=0.5):
++                focal_lambda=0.5,
++                use_doc_prior=True):
+         super().__init__()
+         self.config = config
+         self.model = model
+@@ -107,6 +108,7 @@
+         self.use_ms_ecc = use_ms_ecc
+         self.use_gated_graph = use_gated_graph
+         self.use_focal_loss = use_focal_loss
++        self.use_doc_prior = use_doc_prior
+ 
+         if use_focal_loss:
+             self.loss_fnt = FocalATLoss(config.num_labels, gamma=focal_gamma, alpha=focal_alpha, focal_lambda=focal_lambda)
+@@ -328,7 +330,8 @@
+         logits = self.forward_rel(hs, ts, rs, hts_graph, batch_rel)
+         doc_logits = self.classifier(doc_cls)
+         doc_prob = torch.sigmoid(doc_logits)
+-        logits = doc_prob.repeat_interleave(torch.tensor(batch_rel,dtype=torch.int32).to(doc_logits.device), dim=0) + logits
++        if self.use_doc_prior:
++            logits = doc_prob.repeat_interleave(torch.tensor(batch_rel,dtype=torch.int32).to(doc_logits.device), dim=0) + logits
+         output["rel_pred"] = self.loss_fnt.get_label(logits, num_labels=self.num_labels)
+         if self.use_ms_ecc:
+             output["alpha"] = fusion_gate.mean(dim=-1)
