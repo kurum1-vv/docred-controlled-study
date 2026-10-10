@@ -1,6 +1,6 @@
 # Reproducibility Package — README
 
-**Paper:** *Where Do Gains in Document-Level Relation Extraction Come From? A Reproducible Study of Architectural Modules versus Encoder Scale*
+**Paper:** *Architectural Modules versus Encoder Scale in Document-Level Relation Extraction: A Controlled Reproducible Study*
 
 This package lets you reproduce every table in the paper from scratch. All numbers
 are means over five random seeds (42, 123, 456, 789, 2024).
