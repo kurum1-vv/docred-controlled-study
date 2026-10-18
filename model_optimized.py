@@ -1,3 +1,4 @@
+import os
 import torch
 import torch.nn as nn
 from opt_einsum import contract
@@ -98,7 +99,8 @@ class DocREModel(nn.Module):
                 num_graph_layers=3,
                 focal_gamma=2.0,
                 focal_alpha=0.25,
-                focal_lambda=0.5):
+                focal_lambda=0.5,
+                use_doc_prior=True):
         super().__init__()
         self.config = config
         self.model = model
@@ -107,6 +109,7 @@ class DocREModel(nn.Module):
         self.use_ms_ecc = use_ms_ecc
         self.use_gated_graph = use_gated_graph
         self.use_focal_loss = use_focal_loss
+        self.use_doc_prior = use_doc_prior
 
         if use_focal_loss:
             self.loss_fnt = FocalATLoss(config.num_labels, gamma=focal_gamma, alpha=focal_alpha, focal_lambda=focal_lambda)
@@ -222,8 +225,15 @@ class DocREModel(nn.Module):
         for i, graph in enumerate(hts_graph):
             nodes_num = graph.shape[0]
             graph_adj[i, :nodes_num, :nodes_num] = torch.from_numpy(graph)
+        _starts = [0]
+        for _r in rels_per_batch[:-1]:
+            _starts.append(_starts[-1] + _r)
         for i in range(n):
-            graph_fea[i, :rels_per_batch[i], :] = hts[:rels_per_batch[i]]
+            if os.environ.get('FIX_GRAPH') == '1':
+                _s = _starts[i]; _e = _s + rels_per_batch[i]
+                graph_fea[i, :rels_per_batch[i], :] = hts[_s:_e]
+            else:
+                graph_fea[i, :rels_per_batch[i], :] = hts[:rels_per_batch[i]]
             graph_fea[i, rels_per_batch[i]:, :] = torch.zeros(self.hidden_size).to(hts.device)
 
         for graph_layer in self.hts_graph_layers:
@@ -233,7 +243,11 @@ class DocREModel(nn.Module):
                 graph_fea, _ = graph_layer(graph_fea, graph_adj)
 
         for i in range(n):
-            new_hts[:rels_per_batch[i]] = graph_fea[i][:rels_per_batch[i]]
+            if os.environ.get('FIX_GRAPH') == '1':
+                _s = _starts[i]; _e = _s + rels_per_batch[i]
+                new_hts[_s:_e] = graph_fea[i][:rels_per_batch[i]]
+            else:
+                new_hts[:rels_per_batch[i]] = graph_fea[i][:rels_per_batch[i]]
         return new_hts
 
     def forward_rel(self, hs, ts, rs, hts_graph, batch_rel):
@@ -328,7 +342,8 @@ class DocREModel(nn.Module):
         logits = self.forward_rel(hs, ts, rs, hts_graph, batch_rel)
         doc_logits = self.classifier(doc_cls)
         doc_prob = torch.sigmoid(doc_logits)
-        logits = doc_prob.repeat_interleave(torch.tensor(batch_rel,dtype=torch.int32).to(doc_logits.device), dim=0) + logits
+        if self.use_doc_prior:
+            logits = doc_prob.repeat_interleave(torch.tensor(batch_rel,dtype=torch.int32).to(doc_logits.device), dim=0) + logits
         output["rel_pred"] = self.loss_fnt.get_label(logits, num_labels=self.num_labels)
         if self.use_ms_ecc:
             output["alpha"] = fusion_gate.mean(dim=-1)

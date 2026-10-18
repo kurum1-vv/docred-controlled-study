@@ -267,6 +267,7 @@ def main():
     parser.add_argument("--disable_ms_ecc", action="store_true")
     parser.add_argument("--disable_gated_graph", action="store_true")
     parser.add_argument("--disable_focal_loss", action="store_true")
+    parser.add_argument("--no_doc_prior", action="store_true")
     args = parser.parse_args()
 
     if args.disable_ms_ecc:
@@ -298,6 +299,7 @@ def main():
     read = read_docred
 
     model = DocREModel(config, model, tokenizer,
+                    emb_size=config.hidden_size,
                     num_labels=args.num_labels,
                     max_sent_num=args.max_sent_num,
                     evi_thresh=args.evi_thresh,
@@ -307,7 +309,8 @@ def main():
                     num_graph_layers=args.num_graph_layers,
                     focal_gamma=args.focal_gamma,
                     focal_alpha=args.focal_alpha,
-                    focal_lambda=args.focal_lambda)
+                    focal_lambda=args.focal_lambda,
+                    use_doc_prior=not args.no_doc_prior)
     model.to(args.device)
 
     if args.load_path != "":

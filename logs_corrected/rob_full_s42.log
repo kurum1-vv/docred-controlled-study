@@ -1,0 +1,442 @@
+===== run start =====
+2026-10-18 15:13:55
+name=rob_full_s42 seed=42 gpu=2 FIX_GRAPH=1
+Some weights of the model checkpoint at /data1/hcw/models/roberta-base were not used when initializing RobertaModel: ['lm_head.layer_norm.bias', 'lm_head.dense.weight', 'lm_head.bias', 'lm_head.dense.bias', 'lm_head.layer_norm.weight']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at /data1/hcw/models/roberta-base and are newly initialized: ['roberta.pooler.dense.weight', 'roberta.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Loading training data from ./dataset/docred/train_annotated.json...
+Loading examples:   0%|          | 0/3053 [00:00<?, ?it/s]0
+[[0 2 0 ... 0 0 0]
+ [2 0 3 ... 0 0 0]
+ [0 3 0 ... 0 0 0]
+ ...
+ [0 0 0 ... 0 2 2]
+ [0 0 0 ... 2 0 2]
+ [0 0 0 ... 2 2 0]]
+1
+[[0 2 2 ... 0 0 0]
+ [2 0 2 ... 0 0 0]
+ [2 2 0 ... 0 0 0]
+ ...
+ [0 0 0 ... 0 2 2]
+ [0 0 0 ... 2 0 2]
+ [0 0 0 ... 2 2 0]]
+2
+[[0 3 0 ... 0 0 0]
+ [3 0 0 ... 0 0 0]
+ [0 0 0 ... 0 0 0]
+ ...
+ [0 0 0 ... 0 2 2]
+ [0 0 0 ... 2 0 2]
+ [0 0 0 ... 2 2 0]]
+3
+[[0 2 4 ... 0 0 0]
+ [2 0 1 ... 0 0 0]
+ [4 1 0 ... 0 0 0]
+ ...
+ [0 0 0 ... 0 2 2]
+ [0 0 0 ... 2 0 2]
+ [0 0 0 ... 2 2 0]]
+Loading examples:   0%|          | 4/3053 [00:00<02:23, 21.21it/s]4
+[[0 2 0 ... 0 0 0]
+ [2 0 0 ... 1 1 1]
+ [0 0 0 ... 0 0 0]
+ ...
+ [0 1 0 ... 0 2 2]
+ [0 1 0 ... 2 0 2]
+ [0 1 0 ... 2 2 0]]
+Loading examples:   0%|          | 10/3053 [00:00<01:37, 31.20it/s]Loading examples:   0%|          | 14/3053 [00:00<01:45, 28.75it/s]Loading examples:   1%|          | 17/3053 [00:00<01:57, 25.82it/s]Loading examples:   1%|          | 23/3053 [00:00<01:51, 27.25it/s]Loading examples:   1%|          | 28/3053 [00:00<01:40, 30.07it/s]Loading examples:   1%|          | 32/3053 [00:01<01:56, 25.96it/s]Loading examples:   1%|          | 37/3053 [00:01<01:37, 31.00it/s]Loading examples:   1%|▏         | 43/3053 [00:01<01:20, 37.60it/s]Loading examples:   2%|▏         | 48/3053 [00:01<02:04, 24.20it/s]Loading examples:   2%|▏         | 53/3053 [00:01<01:55, 25.96it/s]Loading examples:   2%|▏         | 57/3053 [00:02<01:48, 27.59it/s]Loading examples:   2%|▏         | 63/3053 [00:02<01:33, 32.09it/s]Loading examples:   2%|▏         | 67/3053 [00:02<01:39, 30.08it/s]Loading examples:   2%|▏         | 71/3053 [00:02<01:33, 31.88it/s]Loading examples:   3%|▎         | 78/3053 [00:02<01:15, 39.32it/s]Loading examples:   3%|▎         | 87/3053 [00:02<00:57, 51.22it/s]Loading examples:   3%|▎         | 93/3053 [00:02<01:13, 40.22it/s]Loading examples:   3%|▎         | 98/3053 [00:03<01:16, 38.68it/s]Loading examples:   3%|▎         | 104/3053 [00:03<01:08, 42.80it/s]Loading examples:   4%|▎         | 109/3053 [00:03<01:13, 39.85it/s]Loading examples:   4%|▎         | 114/3053 [00:03<01:16, 38.46it/s]Loading examples:   4%|▍         | 119/3053 [00:03<01:15, 39.04it/s]Loading examples:   4%|▍         | 126/3053 [00:03<01:11, 41.22it/s]Loading examples:   4%|▍         | 131/3053 [00:03<01:10, 41.62it/s]Loading examples:   4%|▍         | 137/3053 [00:03<01:10, 41.49it/s]Loading examples:   5%|▍         | 145/3053 [00:04<01:01, 47.16it/s]Loading examples:   5%|▍         | 150/3053 [00:04<01:13, 39.73it/s]Loading examples:   5%|▌         | 155/3053 [00:04<01:12, 40.00it/s]Loading examples:   5%|▌         | 160/3053 [00:04<01:08, 42.31it/s]Loading examples:   5%|▌         | 165/3053 [00:04<01:17, 37.31it/s]Loading examples:   6%|▌         | 171/3053 [00:04<01:14, 38.75it/s]Loading examples:   6%|▌         | 178/3053 [00:04<01:03, 45.03it/s]Loading examples:   6%|▌         | 184/3053 [00:05<01:00, 47.25it/s]Loading examples:   6%|▌         | 189/3053 [00:05<01:00, 47.31it/s]Loading examples:   6%|▋         | 194/3053 [00:05<01:37, 29.29it/s]Loading examples:   7%|▋         | 201/3053 [00:05<01:17, 36.78it/s]Loading examples:   7%|▋         | 206/3053 [00:05<01:26, 33.05it/s]Loading examples:   7%|▋         | 212/3053 [00:05<01:14, 38.34it/s]Loading examples:   7%|▋         | 217/3053 [00:06<01:20, 35.04it/s]Loading examples:   7%|▋         | 222/3053 [00:06<01:17, 36.63it/s]Loading examples:   7%|▋         | 228/3053 [00:06<01:11, 39.31it/s]Loading examples:   8%|▊         | 235/3053 [00:06<01:00, 46.38it/s]Loading examples:   8%|▊         | 241/3053 [00:06<00:59, 47.26it/s]Loading examples:   8%|▊         | 250/3053 [00:06<00:58, 48.12it/s]Loading examples:   8%|▊         | 256/3053 [00:07<01:23, 33.32it/s]Loading examples:   9%|▊         | 261/3053 [00:07<01:29, 31.10it/s]Loading examples:   9%|▉         | 269/3053 [00:07<01:11, 39.09it/s]Loading examples:   9%|▉         | 274/3053 [00:07<01:13, 37.69it/s]Loading examples:   9%|▉         | 281/3053 [00:07<01:05, 42.51it/s]Loading examples:   9%|▉         | 286/3053 [00:07<01:04, 42.79it/s]Loading examples:  10%|▉         | 294/3053 [00:07<00:54, 50.49it/s]Loading examples:  10%|▉         | 300/3053 [00:07<00:59, 46.07it/s]Loading examples:  10%|█         | 307/3053 [00:08<00:53, 51.23it/s]Loading examples:  10%|█         | 314/3053 [00:08<00:49, 55.28it/s]Loading examples:  10%|█         | 320/3053 [00:08<00:50, 54.38it/s]Loading examples:  11%|█         | 326/3053 [00:08<01:02, 43.68it/s]Loading examples:  11%|█         | 331/3053 [00:08<01:07, 40.61it/s]Loading examples:  11%|█         | 336/3053 [00:08<01:08, 39.61it/s]Loading examples:  11%|█         | 342/3053 [00:08<01:04, 41.95it/s]Loading examples:  11%|█▏        | 347/3053 [00:09<01:01, 43.78it/s]Loading examples:  12%|█▏        | 352/3053 [00:09<01:07, 39.75it/s]Loading examples:  12%|█▏        | 358/3053 [00:09<01:05, 41.35it/s]Loading examples:  12%|█▏        | 363/3053 [00:09<01:15, 35.54it/s]Loading examples:  12%|█▏        | 367/3053 [00:09<01:21, 33.00it/s]Loading examples:  12%|█▏        | 373/3053 [00:09<01:09, 38.79it/s]Loading examples:  12%|█▏        | 380/3053 [00:09<00:58, 45.34it/s]Loading examples:  13%|█▎        | 387/3053 [00:10<01:34, 28.28it/s]Loading examples:  13%|█▎        | 392/3053 [00:10<01:25, 31.22it/s]Loading examples:  13%|█▎        | 398/3053 [00:10<01:13, 36.07it/s]Loading examples:  13%|█▎        | 403/3053 [00:10<01:08, 38.91it/s]Loading examples:  13%|█▎        | 408/3053 [00:10<01:12, 36.25it/s]Loading examples:  14%|█▎        | 413/3053 [00:10<01:07, 39.21it/s]Loading examples:  14%|█▎        | 418/3053 [00:11<01:14, 35.55it/s]Loading examples:  14%|█▍        | 422/3053 [00:11<01:14, 35.39it/s]Loading examples:  14%|█▍        | 426/3053 [00:11<01:16, 34.39it/s]Loading examples:  14%|█▍        | 432/3053 [00:11<01:10, 37.09it/s]Loading examples:  14%|█▍        | 436/3053 [00:11<01:09, 37.67it/s]Loading examples:  14%|█▍        | 440/3053 [00:11<01:08, 38.24it/s]Loading examples:  15%|█▍        | 448/3053 [00:11<00:56, 45.85it/s]Loading examples:  15%|█▍        | 455/3053 [00:11<00:51, 50.51it/s]Loading examples:  15%|█▌        | 461/3053 [00:12<01:02, 41.21it/s]Loading examples:  15%|█▌        | 469/3053 [00:12<00:54, 47.22it/s]Loading examples:  16%|█▌        | 474/3053 [00:12<00:54, 47.02it/s]Loading examples:  16%|█▌        | 479/3053 [00:12<00:56, 45.39it/s]Loading examples:  16%|█▌        | 484/3053 [00:12<01:24, 30.31it/s]Loading examples:  16%|█▌        | 488/3053 [00:12<01:20, 31.73it/s]Loading examples:  16%|█▌        | 493/3053 [00:13<01:22, 30.89it/s]Loading examples:  16%|█▋        | 502/3053 [00:13<01:04, 39.37it/s]Loading examples:  17%|█▋        | 508/3053 [00:13<00:58, 43.71it/s]Loading examples:  17%|█▋        | 513/3053 [00:13<01:19, 31.95it/s]Loading examples:  17%|█▋        | 517/3053 [00:13<01:23, 30.34it/s]Loading examples:  17%|█▋        | 521/3053 [00:13<01:24, 30.06it/s]Loading examples:  17%|█▋        | 529/3053 [00:13<01:03, 39.79it/s]Loading examples:  17%|█▋        | 534/3053 [00:14<01:05, 38.17it/s]Loading examples:  18%|█▊        | 539/3053 [00:14<01:07, 37.02it/s]Loading examples:  18%|█▊        | 545/3053 [00:14<01:03, 39.54it/s]Loading examples:  18%|█▊        | 550/3053 [00:14<01:06, 37.66it/s]Loading examples:  18%|█▊        | 555/3053 [00:14<01:02, 39.80it/s]Loading examples:  18%|█▊        | 560/3053 [00:14<01:07, 36.82it/s]Loading examples:  19%|█▊        | 566/3053 [00:14<01:00, 41.35it/s]Loading examples:  19%|█▊        | 571/3053 [00:15<01:13, 33.81it/s]Loading examples:  19%|█▉        | 578/3053 [00:15<01:01, 40.53it/s]Loading examples:  19%|█▉        | 583/3053 [00:15<01:08, 35.96it/s]Loading examples:  19%|█▉        | 587/3053 [00:15<01:12, 34.13it/s]Loading examples:  19%|█▉        | 591/3053 [00:15<01:10, 35.10it/s]Loading examples:  20%|█▉        | 596/3053 [00:15<01:07, 36.40it/s]Loading examples:  20%|█▉        | 600/3053 [00:15<01:11, 34.45it/s]Loading examples:  20%|█▉        | 604/3053 [00:16<02:02, 20.03it/s]Loading examples:  20%|█▉        | 610/3053 [00:16<01:41, 24.17it/s]Loading examples:  20%|██        | 614/3053 [00:16<01:36, 25.28it/s]Loading examples:  20%|██        | 620/3053 [00:16<01:18, 30.99it/s]Loading examples:  21%|██        | 626/3053 [00:16<01:06, 36.32it/s]Loading examples:  21%|██        | 631/3053 [00:17<01:07, 35.82it/s]Loading examples:  21%|██        | 635/3053 [00:17<01:26, 27.80it/s]Loading examples:  21%|██        | 639/3053 [00:17<01:24, 28.72it/s]Loading examples:  21%|██        | 643/3053 [00:17<01:21, 29.51it/s]Loading examples:  21%|██        | 648/3053 [00:17<01:11, 33.55it/s]Loading examples:  21%|██▏       | 653/3053 [00:17<01:05, 36.50it/s]Loading examples:  22%|██▏       | 657/3053 [00:17<01:15, 31.60it/s]Loading examples:  22%|██▏       | 661/3053 [00:18<01:14, 32.12it/s]Loading examples:  22%|██▏       | 666/3053 [00:18<01:06, 35.67it/s]Loading examples:  22%|██▏       | 674/3053 [00:18<00:52, 45.70it/s]Loading examples:  22%|██▏       | 680/3053 [00:18<00:56, 42.13it/s]Loading examples:  23%|██▎       | 687/3053 [00:18<00:49, 47.71it/s]Loading examples:  23%|██▎       | 694/3053 [00:18<00:44, 53.25it/s]Loading examples:  23%|██▎       | 702/3053 [00:18<00:40, 58.53it/s]Loading examples:  23%|██▎       | 709/3053 [00:18<00:49, 47.55it/s]Loading examples:  23%|██▎       | 715/3053 [00:19<00:50, 45.91it/s]Loading examples:  24%|██▎       | 720/3053 [00:19<00:50, 46.33it/s]Loading examples:  24%|██▎       | 725/3053 [00:19<00:50, 46.17it/s]Loading examples:  24%|██▍       | 731/3053 [00:19<00:50, 45.72it/s]Loading examples:  24%|██▍       | 736/3053 [00:19<00:52, 43.72it/s]Loading examples:  24%|██▍       | 742/3053 [00:19<00:48, 47.67it/s]Loading examples:  24%|██▍       | 747/3053 [00:19<00:54, 42.54it/s]Loading examples:  25%|██▍       | 752/3053 [00:19<00:55, 41.24it/s]Loading examples:  25%|██▍       | 759/3053 [00:20<00:52, 43.56it/s]Loading examples:  25%|██▌       | 764/3053 [00:20<01:01, 37.52it/s]Loading examples:  25%|██▌       | 768/3053 [00:20<01:10, 32.37it/s]Loading examples:  25%|██▌       | 772/3053 [00:20<01:20, 28.47it/s]Loading examples:  25%|██▌       | 777/3053 [00:20<01:10, 32.36it/s]Loading examples:  26%|██▌       | 785/3053 [00:20<00:54, 41.77it/s]Loading examples:  26%|██▌       | 790/3053 [00:21<00:57, 39.05it/s]Loading examples:  26%|██▌       | 795/3053 [00:21<01:08, 32.76it/s]Loading examples:  26%|██▌       | 799/3053 [00:21<01:06, 33.83it/s]Loading examples:  26%|██▋       | 804/3053 [00:21<01:02, 35.94it/s]Loading examples:  27%|██▋       | 810/3053 [00:21<00:55, 40.38it/s]Loading examples:  27%|██▋       | 818/3053 [00:21<00:47, 46.78it/s]Loading examples:  27%|██▋       | 824/3053 [00:21<00:48, 46.39it/s]Loading examples:  27%|██▋       | 833/3053 [00:21<00:40, 54.42it/s]Loading examples:  27%|██▋       | 839/3053 [00:22<00:48, 45.32it/s]Loading examples:  28%|██▊       | 847/3053 [00:22<00:42, 51.45it/s]Loading examples:  28%|██▊       | 853/3053 [00:22<00:43, 50.84it/s]Loading examples:  28%|██▊       | 859/3053 [00:22<00:50, 43.54it/s]Loading examples:  28%|██▊       | 864/3053 [00:22<00:51, 42.23it/s]Loading examples:  28%|██▊       | 869/3053 [00:22<00:59, 36.98it/s]Loading examples:  29%|██▊       | 875/3053 [00:22<00:55, 39.58it/s]Loading examples:  29%|██▉       | 880/3053 [00:23<01:00, 36.11it/s]Loading examples:  29%|██▉       | 884/3053 [00:23<01:11, 30.53it/s]Loading examples:  29%|██▉       | 888/3053 [00:23<02:14, 16.06it/s]Loading examples:  29%|██▉       | 896/3053 [00:24<01:29, 24.12it/s]Loading examples:  30%|██▉       | 901/3053 [00:24<01:17, 27.87it/s]Loading examples:  30%|██▉       | 906/3053 [00:24<01:17, 27.71it/s]Loading examples:  30%|██▉       | 910/3053 [00:24<01:18, 27.21it/s]Loading examples:  30%|██▉       | 914/3053 [00:24<01:13, 29.26it/s]Loading examples:  30%|███       | 918/3053 [00:24<01:14, 28.81it/s]Loading examples:  30%|███       | 924/3053 [00:24<01:05, 32.75it/s]Loading examples:  30%|███       | 928/3053 [00:25<01:05, 32.25it/s]Loading examples:  31%|███       | 933/3053 [00:25<00:58, 36.04it/s]Loading examples:  31%|███       | 938/3053 [00:25<00:57, 37.08it/s]Loading examples:  31%|███       | 944/3053 [00:25<00:49, 42.44it/s]Loading examples:  31%|███       | 951/3053 [00:25<00:43, 48.75it/s]Loading examples:  31%|███▏      | 957/3053 [00:25<00:53, 39.52it/s]Loading examples:  32%|███▏      | 962/3053 [00:25<00:54, 38.68it/s]Loading examples:  32%|███▏      | 967/3053 [00:25<00:51, 40.76it/s]Loading examples:  32%|███▏      | 972/3053 [00:26<00:57, 36.39it/s]Loading examples:  32%|███▏      | 976/3053 [00:26<00:55, 37.15it/s]Loading examples:  32%|███▏      | 980/3053 [00:26<00:59, 35.09it/s]Loading examples:  32%|███▏      | 984/3053 [00:26<00:59, 35.01it/s]Loading examples:  32%|███▏      | 988/3053 [00:26<00:59, 34.93it/s]Loading examples:  33%|███▎      | 996/3053 [00:26<00:44, 46.34it/s]Loading examples:  33%|███▎      | 1001/3053 [00:26<00:45, 45.00it/s]Loading examples:  33%|███▎      | 1006/3053 [00:26<00:47, 43.18it/s]Loading examples:  33%|███▎      | 1014/3053 [00:27<00:41, 48.93it/s]Loading examples:  33%|███▎      | 1020/3053 [00:27<00:40, 50.69it/s]Loading examples:  34%|███▎      | 1026/3053 [00:27<00:38, 52.07it/s]Loading examples:  34%|███▍      | 1032/3053 [00:27<00:42, 47.30it/s]Loading examples:  34%|███▍      | 1038/3053 [00:27<00:42, 47.97it/s]Loading examples:  34%|███▍      | 1043/3053 [00:27<00:43, 46.24it/s]Loading examples:  34%|███▍      | 1048/3053 [00:27<00:44, 45.34it/s]Loading examples:  34%|███▍      | 1053/3053 [00:27<00:44, 45.24it/s]Loading examples:  35%|███▍      | 1058/3053 [00:28<00:47, 41.96it/s]Loading examples:  35%|███▍      | 1064/3053 [00:28<00:43, 45.46it/s]Loading examples:  35%|███▌      | 1069/3053 [00:28<00:47, 41.52it/s]Loading examples:  35%|███▌      | 1075/3053 [00:28<00:49, 39.97it/s]Loading examples:  35%|███▌      | 1082/3053 [00:28<00:42, 46.24it/s]Loading examples:  36%|███▌      | 1087/3053 [00:28<00:42, 45.83it/s]Loading examples:  36%|███▌      | 1093/3053 [00:28<00:40, 47.81it/s]Loading examples:  36%|███▌      | 1098/3053 [00:28<00:40, 47.69it/s]Loading examples:  36%|███▌      | 1103/3053 [00:29<00:46, 42.38it/s]Loading examples:  36%|███▋      | 1108/3053 [00:29<00:47, 40.77it/s]Loading examples:  36%|███▋      | 1114/3053 [00:29<00:43, 45.00it/s]Loading examples:  37%|███▋      | 1119/3053 [00:29<00:50, 38.37it/s]Loading examples:  37%|███▋      | 1124/3053 [00:29<00:51, 37.18it/s]Loading examples:  37%|███▋      | 1128/3053 [00:29<00:56, 33.95it/s]Loading examples:  37%|███▋      | 1132/3053 [00:29<00:56, 34.28it/s]Loading examples:  37%|███▋      | 1138/3053 [00:29<00:47, 39.90it/s]Loading examples:  37%|███▋      | 1143/3053 [00:30<00:50, 38.09it/s]Loading examples:  38%|███▊      | 1148/3053 [00:30<00:49, 38.37it/s]Loading examples:  38%|███▊      | 1152/3053 [00:30<00:55, 34.04it/s]Loading examples:  38%|███▊      | 1156/3053 [00:30<00:59, 31.96it/s]Loading examples:  38%|███▊      | 1160/3053 [00:30<01:04, 29.19it/s]Loading examples:  38%|███▊      | 1165/3053 [00:30<01:00, 30.95it/s]Loading examples:  38%|███▊      | 1170/3053 [00:30<00:53, 35.11it/s]Loading examples:  38%|███▊      | 1174/3053 [00:31<00:51, 36.25it/s]Loading examples:  39%|███▊      | 1178/3053 [00:31<01:04, 29.19it/s]Loading examples:  39%|███▊      | 1182/3053 [00:31<01:05, 28.57it/s]Loading examples:  39%|███▉      | 1188/3053 [00:31<00:53, 34.95it/s]Loading examples:  39%|███▉      | 1193/3053 [00:31<00:48, 38.34it/s]Loading examples:  39%|███▉      | 1198/3053 [00:31<00:48, 37.91it/s]Loading examples:  39%|███▉      | 1203/3053 [00:31<00:47, 38.93it/s]Loading examples:  40%|███▉      | 1208/3053 [00:31<00:44, 41.48it/s]Loading examples:  40%|███▉      | 1213/3053 [00:32<00:44, 41.51it/s]Loading examples:  40%|███▉      | 1219/3053 [00:32<00:40, 45.31it/s]Loading examples:  40%|████      | 1224/3053 [00:32<00:42, 43.21it/s]Loading examples:  40%|████      | 1230/3053 [00:32<00:38, 47.18it/s]Loading examples:  40%|████      | 1235/3053 [00:32<00:43, 41.80it/s]Loading examples:  41%|████      | 1240/3053 [00:33<01:50, 16.38it/s]Loading examples:  41%|████      | 1244/3053 [00:33<01:34, 19.18it/s]Loading examples:  41%|████      | 1250/3053 [00:33<01:13, 24.56it/s]Loading examples:  41%|████      | 1256/3053 [00:33<00:59, 30.42it/s]Loading examples:  41%|████▏     | 1263/3053 [00:33<00:48, 36.73it/s]Loading examples:  42%|████▏     | 1268/3053 [00:33<00:49, 36.34it/s]Loading examples:  42%|████▏     | 1275/3053 [00:34<00:44, 39.97it/s]Loading examples:  42%|████▏     | 1280/3053 [00:34<00:44, 39.95it/s]Loading examples:  42%|████▏     | 1285/3053 [00:34<00:46, 38.10it/s]Loading examples:  42%|████▏     | 1291/3053 [00:34<00:41, 42.48it/s]Loading examples:  43%|████▎     | 1299/3053 [00:34<00:37, 46.54it/s]Loading examples:  43%|████▎     | 1304/3053 [00:34<00:37, 46.59it/s]Loading examples:  43%|████▎     | 1309/3053 [00:34<00:42, 41.10it/s]Loading examples:  43%|████▎     | 1314/3053 [00:35<00:46, 37.47it/s]Loading examples:  43%|████▎     | 1320/3053 [00:35<00:41, 41.97it/s]Loading examples:  43%|████▎     | 1326/3053 [00:35<00:39, 43.31it/s]Loading examples:  44%|████▎     | 1331/3053 [00:35<00:45, 38.02it/s]Loading examples:  44%|████▍     | 1336/3053 [00:35<00:46, 37.02it/s]Loading examples:  44%|████▍     | 1340/3053 [00:35<00:46, 37.09it/s]Loading examples:  44%|████▍     | 1344/3053 [00:35<00:45, 37.36it/s]Loading examples:  44%|████▍     | 1351/3053 [00:35<00:44, 38.42it/s]Loading examples:  44%|████▍     | 1355/3053 [00:36<00:47, 35.44it/s]Loading examples:  45%|████▍     | 1359/3053 [00:36<00:49, 33.94it/s]Loading examples:  45%|████▍     | 1363/3053 [00:36<00:48, 34.82it/s]Loading examples:  45%|████▍     | 1367/3053 [00:36<00:48, 35.05it/s]Loading examples:  45%|████▍     | 1372/3053 [00:36<00:43, 38.39it/s]Loading examples:  45%|████▌     | 1378/3053 [00:36<00:39, 42.84it/s]Loading examples:  45%|████▌     | 1383/3053 [00:36<00:43, 38.57it/s]Loading examples:  45%|████▌     | 1389/3053 [00:36<00:38, 43.29it/s]Loading examples:  46%|████▌     | 1396/3053 [00:37<00:36, 45.90it/s]Loading examples:  46%|████▌     | 1401/3053 [00:37<00:42, 38.50it/s]Loading examples:  46%|████▌     | 1408/3053 [00:37<00:37, 44.39it/s]Loading examples:  46%|████▋     | 1413/3053 [00:37<00:43, 37.57it/s]Loading examples:  46%|████▋     | 1419/3053 [00:37<00:39, 41.33it/s]Loading examples:  47%|████▋     | 1425/3053 [00:37<00:35, 45.50it/s]Loading examples:  47%|████▋     | 1430/3053 [00:37<00:41, 39.36it/s]Loading examples:  47%|████▋     | 1435/3053 [00:38<00:40, 40.09it/s]Loading examples:  47%|████▋     | 1440/3053 [00:38<00:37, 42.48it/s]Loading examples:  47%|████▋     | 1446/3053 [00:38<00:34, 46.91it/s]Loading examples:  48%|████▊     | 1451/3053 [00:38<00:39, 40.82it/s]Loading examples:  48%|████▊     | 1458/3053 [00:38<00:35, 44.62it/s]Loading examples:  48%|████▊     | 1464/3053 [00:38<00:35, 44.45it/s]Loading examples:  48%|████▊     | 1470/3053 [00:38<00:35, 44.23it/s]Loading examples:  48%|████▊     | 1477/3053 [00:38<00:32, 48.35it/s]Loading examples:  49%|████▊     | 1482/3053 [00:39<00:35, 43.96it/s]Loading examples:  49%|████▊     | 1487/3053 [00:39<00:37, 41.49it/s]Loading examples:  49%|████▉     | 1492/3053 [00:39<00:36, 43.23it/s]Loading examples:  49%|████▉     | 1497/3053 [00:39<00:41, 37.89it/s]Loading examples:  49%|████▉     | 1501/3053 [00:39<00:41, 37.28it/s]Loading examples:  49%|████▉     | 1505/3053 [00:39<00:41, 37.33it/s]Loading examples:  50%|████▉     | 1512/3053 [00:39<00:38, 40.05it/s]Loading examples:  50%|████▉     | 1517/3053 [00:40<00:36, 42.28it/s]Loading examples:  50%|████▉     | 1522/3053 [00:40<00:36, 41.81it/s]Loading examples:  50%|█████     | 1527/3053 [00:40<00:38, 39.20it/s]Loading examples:  50%|█████     | 1531/3053 [00:40<00:49, 30.97it/s]Loading examples:  50%|█████     | 1535/3053 [00:40<00:50, 30.09it/s]Loading examples:  50%|█████     | 1541/3053 [00:40<00:42, 35.74it/s]Loading examples:  51%|█████     | 1545/3053 [00:40<00:42, 35.69it/s]Loading examples:  51%|█████     | 1551/3053 [00:40<00:40, 37.12it/s]Loading examples:  51%|█████     | 1556/3053 [00:41<00:37, 39.94it/s]Loading examples:  51%|█████     | 1561/3053 [00:41<00:38, 38.94it/s]Loading examples:  51%|█████▏    | 1567/3053 [00:41<00:33, 44.06it/s]Loading examples:  52%|█████▏    | 1575/3053 [00:41<00:29, 49.85it/s]Loading examples:  52%|█████▏    | 1581/3053 [00:41<00:38, 38.34it/s]Loading examples:  52%|█████▏    | 1586/3053 [00:41<00:40, 36.28it/s]Loading examples:  52%|█████▏    | 1592/3053 [00:41<00:36, 40.55it/s]Loading examples:  52%|█████▏    | 1597/3053 [00:42<00:38, 37.53it/s]Loading examples:  52%|█████▏    | 1602/3053 [00:42<00:39, 36.29it/s]Loading examples:  53%|█████▎    | 1606/3053 [00:42<00:40, 35.40it/s]Loading examples:  53%|█████▎    | 1610/3053 [00:42<00:42, 33.85it/s]Loading examples:  53%|█████▎    | 1614/3053 [00:42<00:50, 28.29it/s]Loading examples:  53%|█████▎    | 1621/3053 [00:42<00:39, 36.66it/s]Loading examples:  53%|█████▎    | 1626/3053 [00:43<00:41, 34.47it/s]Loading examples:  53%|█████▎    | 1630/3053 [00:43<00:41, 34.46it/s]Loading examples:  54%|█████▎    | 1638/3053 [00:43<00:33, 42.37it/s]Loading examples:  54%|█████▍    | 1643/3053 [00:43<00:31, 44.11it/s]Loading examples:  54%|█████▍    | 1652/3053 [00:43<00:26, 53.07it/s]Loading examples:  54%|█████▍    | 1658/3053 [00:43<00:28, 49.75it/s]Loading examples:  55%|█████▍    | 1664/3053 [00:43<00:28, 49.35it/s]Loading examples:  55%|█████▍    | 1670/3053 [00:43<00:32, 42.82it/s]Loading examples:  55%|█████▍    | 1677/3053 [00:44<00:28, 48.05it/s]Loading examples:  55%|█████▌    | 1683/3053 [00:44<00:28, 48.06it/s]Loading examples:  55%|█████▌    | 1688/3053 [00:44<01:14, 18.21it/s]Loading examples:  55%|█████▌    | 1694/3053 [00:45<01:04, 21.04it/s]Loading examples:  56%|█████▌    | 1700/3053 [00:45<00:52, 26.02it/s]Loading examples:  56%|█████▌    | 1705/3053 [00:45<00:46, 29.20it/s]Loading examples:  56%|█████▌    | 1710/3053 [00:45<00:43, 30.95it/s]Loading examples:  56%|█████▌    | 1715/3053 [00:45<00:39, 33.56it/s]Loading examples:  56%|█████▋    | 1720/3053 [00:45<00:39, 33.33it/s]Loading examples:  57%|█████▋    | 1727/3053 [00:45<00:33, 39.75it/s]Loading examples:  57%|█████▋    | 1733/3053 [00:45<00:30, 43.18it/s]Loading examples:  57%|█████▋    | 1738/3053 [00:46<00:47, 27.69it/s]Loading examples:  57%|█████▋    | 1744/3053 [00:46<00:41, 31.65it/s]Loading examples:  57%|█████▋    | 1749/3053 [00:46<00:38, 33.76it/s]Loading examples:  57%|█████▋    | 1754/3053 [00:46<00:38, 33.47it/s]Loading examples:  58%|█████▊    | 1762/3053 [00:46<00:29, 43.31it/s]Loading examples:  58%|█████▊    | 1768/3053 [00:47<00:34, 37.11it/s]Loading examples:  58%|█████▊    | 1773/3053 [00:47<00:34, 37.14it/s]Loading examples:  58%|█████▊    | 1778/3053 [00:47<00:32, 39.64it/s]Loading examples:  58%|█████▊    | 1783/3053 [00:47<00:31, 40.20it/s]Loading examples:  59%|█████▊    | 1788/3053 [00:47<00:35, 36.02it/s]Loading examples:  59%|█████▉    | 1796/3053 [00:47<00:30, 41.06it/s]Loading examples:  59%|█████▉    | 1801/3053 [00:47<00:30, 40.65it/s]Loading examples:  59%|█████▉    | 1808/3053 [00:47<00:27, 45.49it/s]Loading examples:  59%|█████▉    | 1813/3053 [00:48<00:26, 46.37it/s]Loading examples:  60%|█████▉    | 1819/3053 [00:48<00:25, 49.33it/s]Loading examples:  60%|█████▉    | 1825/3053 [00:48<00:24, 50.44it/s]Loading examples:  60%|██████    | 1832/3053 [00:48<00:24, 49.36it/s]Loading examples:  60%|██████    | 1838/3053 [00:48<00:29, 41.59it/s]Loading examples:  60%|██████    | 1843/3053 [00:48<00:30, 40.10it/s]Loading examples:  61%|██████    | 1848/3053 [00:48<00:31, 38.64it/s]Loading examples:  61%|██████    | 1852/3053 [00:49<00:31, 37.99it/s]Loading examples:  61%|██████    | 1857/3053 [00:49<00:30, 38.92it/s]Loading examples:  61%|██████    | 1861/3053 [00:49<00:33, 35.10it/s]Loading examples:  61%|██████    | 1866/3053 [00:49<00:32, 36.63it/s]Loading examples:  61%|██████▏   | 1870/3053 [00:49<00:36, 32.17it/s]Loading examples:  61%|██████▏   | 1874/3053 [00:49<00:39, 29.99it/s]Loading examples:  62%|██████▏   | 1878/3053 [00:49<00:37, 31.44it/s]Loading examples:  62%|██████▏   | 1886/3053 [00:49<00:28, 41.04it/s]Loading examples:  62%|██████▏   | 1891/3053 [00:50<00:30, 38.61it/s]Loading examples:  62%|██████▏   | 1897/3053 [00:50<00:27, 41.99it/s]Loading examples:  62%|██████▏   | 1902/3053 [00:50<00:26, 42.76it/s]Loading examples:  62%|██████▏   | 1907/3053 [00:50<00:30, 37.79it/s]Loading examples:  63%|██████▎   | 1911/3053 [00:50<00:30, 37.97it/s]Loading examples:  63%|██████▎   | 1915/3053 [00:50<00:30, 37.85it/s]Loading examples:  63%|██████▎   | 1921/3053 [00:50<00:27, 40.55it/s]Loading examples:  63%|██████▎   | 1926/3053 [00:51<00:40, 27.94it/s]Loading examples:  63%|██████▎   | 1932/3053 [00:51<00:33, 33.88it/s]Loading examples:  63%|██████▎   | 1938/3053 [00:51<00:31, 35.95it/s]Loading examples:  64%|██████▎   | 1943/3053 [00:51<00:28, 38.87it/s]Loading examples:  64%|██████▍   | 1948/3053 [00:51<00:27, 40.22it/s]Loading examples:  64%|██████▍   | 1953/3053 [00:51<00:26, 41.35it/s]Loading examples:  64%|██████▍   | 1958/3053 [00:51<00:27, 39.51it/s]Loading examples:  64%|██████▍   | 1963/3053 [00:52<00:26, 40.91it/s]Loading examples:  65%|██████▍   | 1971/3053 [00:52<00:21, 50.59it/s]Loading examples:  65%|██████▍   | 1979/3053 [00:52<00:22, 47.29it/s]Loading examples:  65%|██████▌   | 1985/3053 [00:52<00:21, 49.01it/s]Loading examples:  65%|██████▌   | 1991/3053 [00:52<00:29, 36.41it/s]Loading examples:  65%|██████▌   | 1996/3053 [00:53<00:40, 25.78it/s]Loading examples:  66%|██████▌   | 2003/3053 [00:53<00:32, 32.06it/s]Loading examples:  66%|██████▌   | 2009/3053 [00:53<00:32, 32.05it/s]Loading examples:  66%|██████▌   | 2015/3053 [00:53<00:28, 35.99it/s]Loading examples:  66%|██████▌   | 2020/3053 [00:53<00:27, 37.07it/s]Loading examples:  66%|██████▋   | 2025/3053 [00:53<00:26, 38.83it/s]Loading examples:  67%|██████▋   | 2031/3053 [00:53<00:25, 40.44it/s]Loading examples:  67%|██████▋   | 2036/3053 [00:54<00:27, 36.92it/s]Loading examples:  67%|██████▋   | 2042/3053 [00:54<00:25, 39.81it/s]Loading examples:  67%|██████▋   | 2049/3053 [00:54<00:21, 46.07it/s]Loading examples:  67%|██████▋   | 2054/3053 [00:54<00:22, 44.30it/s]Loading examples:  67%|██████▋   | 2059/3053 [00:54<00:22, 45.02it/s]Loading examples:  68%|██████▊   | 2064/3053 [00:54<00:21, 45.51it/s]Loading examples:  68%|██████▊   | 2070/3053 [00:54<00:22, 44.68it/s]Loading examples:  68%|██████▊   | 2076/3053 [00:54<00:20, 47.65it/s]Loading examples:  68%|██████▊   | 2082/3053 [00:54<00:20, 48.41it/s]Loading examples:  68%|██████▊   | 2087/3053 [00:55<00:22, 43.13it/s]Loading examples:  69%|██████▊   | 2092/3053 [00:55<00:23, 40.75it/s]Loading examples:  69%|██████▊   | 2097/3053 [00:55<00:27, 35.23it/s]Loading examples:  69%|██████▉   | 2101/3053 [00:55<00:27, 34.45it/s]Loading examples:  69%|██████▉   | 2105/3053 [00:55<00:28, 33.65it/s]Loading examples:  69%|██████▉   | 2111/3053 [00:55<00:24, 38.22it/s]Loading examples:  69%|██████▉   | 2117/3053 [00:55<00:21, 42.77it/s]Loading examples:  70%|██████▉   | 2123/3053 [00:56<00:20, 45.85it/s]Loading examples:  70%|██████▉   | 2128/3053 [00:56<00:22, 41.14it/s]Loading examples:  70%|██████▉   | 2133/3053 [00:56<00:24, 37.58it/s]Loading examples:  70%|██████▉   | 2137/3053 [00:56<00:26, 34.32it/s]Loading examples:  70%|███████   | 2147/3053 [00:56<00:18, 48.32it/s]Loading examples:  71%|███████   | 2153/3053 [00:56<00:18, 49.85it/s]Loading examples:  71%|███████   | 2159/3053 [00:56<00:23, 38.82it/s]Loading examples:  71%|███████   | 2164/3053 [00:57<00:22, 40.16it/s]Loading examples:  71%|███████   | 2169/3053 [00:57<00:22, 39.64it/s]Loading examples:  71%|███████   | 2174/3053 [00:57<00:20, 41.94it/s]Loading examples:  71%|███████▏  | 2179/3053 [00:57<00:21, 40.04it/s]Loading examples:  72%|███████▏  | 2184/3053 [00:57<00:22, 39.16it/s]Loading examples:  72%|███████▏  | 2189/3053 [00:57<00:23, 36.42it/s]Loading examples:  72%|███████▏  | 2193/3053 [00:57<00:25, 33.64it/s]Loading examples:  72%|███████▏  | 2197/3053 [00:57<00:26, 32.87it/s]Loading examples:  72%|███████▏  | 2202/3053 [00:58<00:25, 33.01it/s]Loading examples:  72%|███████▏  | 2207/3053 [00:58<00:23, 36.57it/s]Loading examples:  72%|███████▏  | 2211/3053 [00:58<00:27, 31.03it/s]Loading examples:  73%|███████▎  | 2215/3053 [00:58<00:27, 30.56it/s]Loading examples:  73%|███████▎  | 2221/3053 [00:58<00:22, 37.15it/s]Loading examples:  73%|███████▎  | 2225/3053 [00:58<00:26, 31.15it/s]Loading examples:  73%|███████▎  | 2231/3053 [00:59<01:02, 13.22it/s]Loading examples:  73%|███████▎  | 2234/3053 [00:59<00:55, 14.79it/s]Loading examples:  73%|███████▎  | 2240/3053 [00:59<00:39, 20.40it/s]Loading examples:  74%|███████▎  | 2244/3053 [01:00<00:38, 21.12it/s]Loading examples:  74%|███████▎  | 2251/3053 [01:00<00:28, 27.76it/s]Loading examples:  74%|███████▍  | 2255/3053 [01:00<00:27, 29.19it/s]Loading examples:  74%|███████▍  | 2259/3053 [01:00<00:26, 30.47it/s]Loading examples:  74%|███████▍  | 2264/3053 [01:00<00:23, 34.23it/s]Loading examples:  74%|███████▍  | 2269/3053 [01:00<00:21, 37.15it/s]Loading examples:  74%|███████▍  | 2274/3053 [01:00<00:19, 39.27it/s]Loading examples:  75%|███████▍  | 2279/3053 [01:00<00:20, 37.06it/s]Loading examples:  75%|███████▍  | 2283/3053 [01:01<00:20, 37.03it/s]Loading examples:  75%|███████▍  | 2288/3053 [01:01<00:20, 37.50it/s]Loading examples:  75%|███████▌  | 2292/3053 [01:01<00:21, 35.26it/s]Loading examples:  75%|███████▌  | 2296/3053 [01:01<00:21, 34.66it/s]Loading examples:  75%|███████▌  | 2300/3053 [01:01<00:21, 34.79it/s]Loading examples:  75%|███████▌  | 2304/3053 [01:01<00:22, 32.93it/s]Loading examples:  76%|███████▌  | 2308/3053 [01:01<00:22, 33.64it/s]Loading examples:  76%|███████▌  | 2312/3053 [01:01<00:22, 32.39it/s]Loading examples:  76%|███████▌  | 2316/3053 [01:02<00:24, 30.25it/s]Loading examples:  76%|███████▌  | 2321/3053 [01:02<00:21, 34.00it/s]Loading examples:  76%|███████▋  | 2328/3053 [01:02<00:17, 42.56it/s]Loading examples:  76%|███████▋  | 2333/3053 [01:02<00:17, 42.18it/s]Loading examples:  77%|███████▋  | 2338/3053 [01:02<00:16, 43.41it/s]Loading examples:  77%|███████▋  | 2343/3053 [01:02<00:17, 40.26it/s]Loading examples:  77%|███████▋  | 2348/3053 [01:02<00:21, 32.51it/s]Loading examples:  77%|███████▋  | 2354/3053 [01:03<00:18, 37.34it/s]Loading examples:  77%|███████▋  | 2359/3053 [01:03<00:18, 36.94it/s]Loading examples:  77%|███████▋  | 2365/3053 [01:03<00:16, 41.41it/s]Loading examples:  78%|███████▊  | 2370/3053 [01:03<00:19, 35.83it/s]Loading examples:  78%|███████▊  | 2374/3053 [01:03<00:19, 35.21it/s]Loading examples:  78%|███████▊  | 2378/3053 [01:03<00:19, 34.41it/s]Loading examples:  78%|███████▊  | 2383/3053 [01:03<00:18, 36.08it/s]Loading examples:  78%|███████▊  | 2387/3053 [01:03<00:18, 35.83it/s]Loading examples:  78%|███████▊  | 2395/3053 [01:04<00:14, 45.84it/s]Loading examples:  79%|███████▊  | 2400/3053 [01:04<00:16, 38.48it/s]Loading examples:  79%|███████▉  | 2405/3053 [01:04<00:20, 32.16it/s]Loading examples:  79%|███████▉  | 2410/3053 [01:04<00:18, 34.25it/s]Loading examples:  79%|███████▉  | 2416/3053 [01:04<00:16, 39.67it/s]Loading examples:  79%|███████▉  | 2421/3053 [01:04<00:15, 41.58it/s]Loading examples:  80%|███████▉  | 2428/3053 [01:04<00:13, 47.33it/s]Loading examples:  80%|███████▉  | 2434/3053 [01:05<00:13, 46.36it/s]Loading examples:  80%|███████▉  | 2440/3053 [01:05<00:12, 49.32it/s]Loading examples:  80%|████████  | 2448/3053 [01:05<00:10, 57.09it/s]Loading examples:  80%|████████  | 2454/3053 [01:05<00:13, 44.82it/s]Loading examples:  81%|████████  | 2460/3053 [01:05<00:16, 35.06it/s]Loading examples:  81%|████████  | 2465/3053 [01:05<00:16, 35.80it/s]Loading examples:  81%|████████  | 2470/3053 [01:06<00:16, 36.20it/s]Loading examples:  81%|████████  | 2474/3053 [01:06<00:17, 32.87it/s]Loading examples:  81%|████████  | 2478/3053 [01:06<00:21, 27.24it/s]Loading examples:  81%|████████▏ | 2482/3053 [01:06<00:21, 26.41it/s]Loading examples:  81%|████████▏ | 2487/3053 [01:06<00:19, 28.41it/s]Loading examples:  82%|████████▏ | 2492/3053 [01:06<00:17, 31.22it/s]Loading examples:  82%|████████▏ | 2497/3053 [01:06<00:16, 34.42it/s]Loading examples:  82%|████████▏ | 2503/3053 [01:07<00:14, 38.66it/s]Loading examples:  82%|████████▏ | 2509/3053 [01:07<00:13, 41.05it/s]Loading examples:  82%|████████▏ | 2514/3053 [01:07<00:13, 40.24it/s]Loading examples:  83%|████████▎ | 2523/3053 [01:07<00:10, 50.69it/s]Loading examples:  83%|████████▎ | 2529/3053 [01:07<00:10, 48.00it/s]Loading examples:  83%|████████▎ | 2534/3053 [01:07<00:10, 47.78it/s]Loading examples:  83%|████████▎ | 2539/3053 [01:07<00:11, 46.55it/s]Loading examples:  83%|████████▎ | 2545/3053 [01:07<00:10, 46.81it/s]Loading examples:  84%|████████▎ | 2552/3053 [01:08<00:09, 51.75it/s]Loading examples:  84%|████████▍ | 2558/3053 [01:08<00:11, 42.32it/s]Loading examples:  84%|████████▍ | 2565/3053 [01:08<00:10, 47.84it/s]Loading examples:  84%|████████▍ | 2572/3053 [01:08<00:09, 53.05it/s]Loading examples:  84%|████████▍ | 2578/3053 [01:08<00:09, 50.37it/s]Loading examples:  85%|████████▍ | 2584/3053 [01:08<00:10, 44.40it/s]Loading examples:  85%|████████▍ | 2591/3053 [01:08<00:09, 49.73it/s]Loading examples:  85%|████████▌ | 2597/3053 [01:09<00:11, 39.06it/s]Loading examples:  85%|████████▌ | 2602/3053 [01:09<00:12, 37.01it/s]Loading examples:  85%|████████▌ | 2607/3053 [01:09<00:11, 38.85it/s]Loading examples:  86%|████████▌ | 2614/3053 [01:09<00:09, 45.81it/s]Loading examples:  86%|████████▌ | 2620/3053 [01:09<00:09, 45.98it/s]Loading examples:  86%|████████▌ | 2628/3053 [01:09<00:08, 47.37it/s]Loading examples:  86%|████████▌ | 2633/3053 [01:09<00:10, 39.56it/s]Loading examples:  86%|████████▋ | 2638/3053 [01:10<00:12, 33.09it/s]Loading examples:  87%|████████▋ | 2644/3053 [01:10<00:11, 36.31it/s]Loading examples:  87%|████████▋ | 2652/3053 [01:10<00:08, 45.38it/s]Loading examples:  87%|████████▋ | 2658/3053 [01:10<00:09, 42.85it/s]Loading examples:  87%|████████▋ | 2664/3053 [01:10<00:08, 46.07it/s]Loading examples:  87%|████████▋ | 2671/3053 [01:10<00:09, 38.44it/s]Loading examples:  88%|████████▊ | 2678/3053 [01:11<00:09, 40.23it/s]Loading examples:  88%|████████▊ | 2683/3053 [01:11<00:09, 38.98it/s]Loading examples:  88%|████████▊ | 2689/3053 [01:11<00:08, 40.91it/s]Loading examples:  88%|████████▊ | 2694/3053 [01:11<00:11, 31.17it/s]Loading examples:  88%|████████▊ | 2699/3053 [01:11<00:11, 30.43it/s]Loading examples:  89%|████████▊ | 2703/3053 [01:11<00:11, 30.40it/s]Loading examples:  89%|████████▊ | 2708/3053 [01:12<00:11, 30.49it/s]Loading examples:  89%|████████▉ | 2712/3053 [01:12<00:11, 30.19it/s]Loading examples:  89%|████████▉ | 2719/3053 [01:12<00:08, 38.49it/s]Loading examples:  89%|████████▉ | 2724/3053 [01:12<00:08, 40.25it/s]Loading examples:  89%|████████▉ | 2730/3053 [01:12<00:07, 44.69it/s]Loading examples:  90%|████████▉ | 2738/3053 [01:12<00:05, 52.61it/s]Loading examples:  90%|████████▉ | 2744/3053 [01:12<00:06, 47.75it/s]Loading examples:  90%|█████████ | 2750/3053 [01:12<00:06, 44.89it/s]Loading examples:  90%|█████████ | 2755/3053 [01:13<00:07, 38.54it/s]Loading examples:  90%|█████████ | 2760/3053 [01:13<00:08, 35.98it/s]Loading examples:  91%|█████████ | 2766/3053 [01:13<00:07, 40.64it/s]Loading examples:  91%|█████████ | 2772/3053 [01:13<00:06, 41.03it/s]Loading examples:  91%|█████████ | 2777/3053 [01:13<00:07, 36.74it/s]Loading examples:  91%|█████████ | 2784/3053 [01:13<00:06, 41.69it/s]Loading examples:  91%|█████████▏| 2789/3053 [01:14<00:07, 37.64it/s]Loading examples:  91%|█████████▏| 2793/3053 [01:14<00:07, 35.46it/s]Loading examples:  92%|█████████▏| 2797/3053 [01:14<00:07, 34.08it/s]Loading examples:  92%|█████████▏| 2801/3053 [01:14<00:07, 33.49it/s]Loading examples:  92%|█████████▏| 2805/3053 [01:14<00:07, 32.12it/s]Loading examples:  92%|█████████▏| 2810/3053 [01:14<00:07, 33.97it/s]Loading examples:  92%|█████████▏| 2814/3053 [01:14<00:06, 34.21it/s]Loading examples:  92%|█████████▏| 2822/3053 [01:14<00:05, 43.34it/s]Loading examples:  93%|█████████▎| 2827/3053 [01:15<00:05, 43.55it/s]Loading examples:  93%|█████████▎| 2833/3053 [01:15<00:04, 44.99it/s]Loading examples:  93%|█████████▎| 2841/3053 [01:15<00:04, 52.81it/s]Loading examples:  93%|█████████▎| 2847/3053 [01:15<00:04, 41.28it/s]Loading examples:  93%|█████████▎| 2854/3053 [01:15<00:04, 46.74it/s]Loading examples:  94%|█████████▎| 2860/3053 [01:15<00:04, 46.25it/s]Loading examples:  94%|█████████▍| 2865/3053 [01:15<00:04, 45.96it/s]Loading examples:  94%|█████████▍| 2870/3053 [01:15<00:04, 43.77it/s]Loading examples:  94%|█████████▍| 2875/3053 [01:16<00:05, 34.68it/s]Loading examples:  94%|█████████▍| 2879/3053 [01:16<00:05, 32.72it/s]Loading examples:  94%|█████████▍| 2884/3053 [01:16<00:05, 33.51it/s]Loading examples:  95%|█████████▍| 2888/3053 [01:16<00:04, 33.38it/s]Loading examples:  95%|█████████▍| 2892/3053 [01:16<00:05, 29.71it/s]Loading examples:  95%|█████████▍| 2896/3053 [01:16<00:05, 29.98it/s]Loading examples:  95%|█████████▍| 2900/3053 [01:17<00:05, 28.35it/s]Loading examples:  95%|█████████▌| 2903/3053 [01:18<00:15,  9.81it/s]Loading examples:  95%|█████████▌| 2908/3053 [01:18<00:10, 13.61it/s]Loading examples:  95%|█████████▌| 2912/3053 [01:18<00:08, 16.38it/s]Loading examples:  95%|█████████▌| 2915/3053 [01:18<00:07, 17.70it/s]Loading examples:  96%|█████████▌| 2919/3053 [01:18<00:06, 21.11it/s]Loading examples:  96%|█████████▌| 2928/3053 [01:18<00:03, 34.02it/s]Loading examples:  96%|█████████▌| 2937/3053 [01:18<00:02, 40.91it/s]Loading examples:  96%|█████████▋| 2943/3053 [01:18<00:02, 39.27it/s]Loading examples:  97%|█████████▋| 2948/3053 [01:19<00:02, 38.10it/s]Loading examples:  97%|█████████▋| 2953/3053 [01:19<00:02, 35.43it/s]Loading examples:  97%|█████████▋| 2957/3053 [01:19<00:02, 33.64it/s]Loading examples:  97%|█████████▋| 2963/3053 [01:19<00:02, 38.68it/s]Loading examples:  97%|█████████▋| 2968/3053 [01:19<00:02, 39.17it/s]Loading examples:  97%|█████████▋| 2974/3053 [01:19<00:01, 42.85it/s]Loading examples:  98%|█████████▊| 2979/3053 [01:19<00:01, 41.00it/s]Loading examples:  98%|█████████▊| 2987/3053 [01:19<00:01, 49.72it/s]Loading examples:  98%|█████████▊| 2994/3053 [01:20<00:01, 53.26it/s]Loading examples:  98%|█████████▊| 3002/3053 [01:20<00:00, 59.34it/s]Loading examples:  99%|█████████▊| 3009/3053 [01:20<00:00, 49.12it/s]Loading examples:  99%|█████████▉| 3015/3053 [01:20<00:00, 47.33it/s]Loading examples:  99%|█████████▉| 3021/3053 [01:20<00:00, 49.16it/s]Loading examples:  99%|█████████▉| 3027/3053 [01:20<00:00, 50.51it/s]Loading examples:  99%|█████████▉| 3033/3053 [01:20<00:00, 44.27it/s]Loading examples: 100%|█████████▉| 3038/3053 [01:21<00:00, 35.00it/s]Loading examples: 100%|█████████▉| 3042/3053 [01:21<00:00, 30.44it/s]Loading examples: 100%|█████████▉| 3046/3053 [01:21<00:00, 30.40it/s]Loading examples: 100%|█████████▉| 3051/3053 [01:21<00:00, 33.14it/s]Loading examples: 100%|██████████| 3053/3053 [01:21<00:00, 37.40it/s]
+Saved graph_dump/graph_1.csv
+Saved graph_dump/graph_2.csv
+Saved graph_dump/graph_3.csv
+Saved graph_dump/graph_4.csv
+Saved graph_dump/graph_5.csv
+# of documents 3053.
+# of positive examples 35615.
+# of negative examples 1163035.
+# of HTS graph edges by type (unique undirected pairs):
+  type 1: 24824556
+  type 2: 12412278
+  type 3: 12412278
+  type 4: 599325
+Loading dev data from ./dataset/docred/dev.json...
+Loading examples:   0%|          | 0/998 [00:00<?, ?it/s]0
+[[0 3 3 ... 0 0 3]
+ [3 0 3 ... 0 0 3]
+ [3 3 0 ... 0 0 3]
+ ...
+ [0 0 0 ... 0 2 2]
+ [0 0 0 ... 2 0 2]
+ [3 3 3 ... 2 2 0]]
+1
+[[0 0 3 ... 0 0 0]
+ [0 0 2 ... 0 0 0]
+ [3 2 0 ... 0 0 0]
+ ...
+ [0 0 0 ... 0 2 2]
+ [0 0 0 ... 2 0 2]
+ [0 0 0 ... 2 2 0]]
+2
+[[0 2 4 ... 0 0 0]
+ [2 0 1 ... 0 0 0]
+ [4 1 0 ... 0 0 0]
+ ...
+ [0 0 0 ... 0 2 2]
+ [0 0 0 ... 2 0 2]
+ [0 0 0 ... 2 2 0]]
+3
+[[0 2 1 ... 0 0 0]
+ [2 0 1 ... 0 0 0]
+ [1 1 0 ... 0 0 0]
+ ...
+ [0 0 0 ... 0 2 2]
+ [0 0 0 ... 2 0 2]
+ [0 0 0 ... 2 2 0]]
+4
+[[0 2 2 ... 0 0 0]
+ [2 0 2 ... 0 0 0]
+ [2 2 0 ... 0 0 0]
+ ...
+ [0 0 0 ... 0 2 2]
+ [0 0 0 ... 2 0 2]
+ [0 0 0 ... 2 2 0]]
+Loading examples:   1%|          | 7/998 [00:00<00:14, 68.12it/s]Loading examples:   1%|▏         | 14/998 [00:00<00:15, 64.26it/s]Loading examples:   2%|▏         | 21/998 [00:00<00:20, 46.78it/s]Loading examples:   3%|▎         | 29/998 [00:00<00:17, 55.39it/s]Loading examples:   4%|▎         | 36/998 [00:00<00:16, 58.60it/s]Loading examples:   4%|▍         | 43/998 [00:00<00:19, 49.03it/s]Loading examples:   5%|▍         | 49/998 [00:00<00:21, 43.35it/s]Loading examples:   5%|▌         | 54/998 [00:01<00:25, 37.31it/s]Loading examples:   6%|▌         | 60/998 [00:01<00:22, 41.07it/s]Loading examples:   7%|▋         | 65/998 [00:01<00:24, 37.85it/s]Loading examples:   7%|▋         | 71/998 [00:01<00:22, 40.70it/s]Loading examples:   8%|▊         | 76/998 [00:01<00:23, 39.05it/s]Loading examples:   8%|▊         | 81/998 [00:01<00:22, 40.29it/s]Loading examples:   9%|▊         | 86/998 [00:01<00:24, 37.40it/s]Loading examples:   9%|▉         | 92/998 [00:02<00:22, 39.86it/s]Loading examples:  10%|▉         | 97/998 [00:02<00:25, 35.91it/s]Loading examples:  10%|█         | 104/998 [00:02<00:20, 43.37it/s]Loading examples:  11%|█         | 109/998 [00:02<00:20, 42.98it/s]Loading examples:  11%|█▏        | 114/998 [00:02<00:19, 44.22it/s]Loading examples:  12%|█▏        | 120/998 [00:02<00:21, 41.64it/s]Loading examples:  13%|█▎        | 126/998 [00:02<00:19, 45.61it/s]Loading examples:  13%|█▎        | 131/998 [00:03<00:19, 44.96it/s]Loading examples:  14%|█▎        | 136/998 [00:03<00:18, 45.63it/s]Loading examples:  14%|█▍        | 143/998 [00:03<00:16, 50.97it/s]Loading examples:  15%|█▍        | 149/998 [00:03<00:17, 47.60it/s]Loading examples:  15%|█▌        | 154/998 [00:03<00:20, 40.64it/s]Loading examples:  16%|█▌        | 159/998 [00:03<00:19, 42.72it/s]Loading examples:  17%|█▋        | 166/998 [00:03<00:19, 42.38it/s]Loading examples:  17%|█▋        | 171/998 [00:03<00:21, 39.09it/s]Loading examples:  18%|█▊        | 176/998 [00:04<00:21, 37.40it/s]Loading examples:  18%|█▊        | 183/998 [00:04<00:19, 41.71it/s]Loading examples:  19%|█▉        | 189/998 [00:04<00:18, 44.25it/s]Loading examples:  20%|█▉        | 196/998 [00:04<00:17, 46.20it/s]Loading examples:  20%|██        | 201/998 [00:04<00:19, 41.24it/s]Loading examples:  21%|██        | 209/998 [00:04<00:15, 49.94it/s]Loading examples:  22%|██▏       | 215/998 [00:04<00:18, 41.22it/s]Loading examples:  22%|██▏       | 220/998 [00:05<00:18, 42.57it/s]Loading examples:  23%|██▎       | 225/998 [00:05<00:17, 43.46it/s]Loading examples:  23%|██▎       | 230/998 [00:05<00:17, 43.14it/s]Loading examples:  24%|██▎       | 235/998 [00:05<00:17, 44.39it/s]Loading examples:  24%|██▍       | 240/998 [00:05<00:16, 44.70it/s]Loading examples:  25%|██▍       | 245/998 [00:05<00:18, 40.70it/s]Loading examples:  25%|██▌       | 251/998 [00:05<00:16, 44.59it/s]Loading examples:  26%|██▌       | 256/998 [00:05<00:16, 45.46it/s]Loading examples:  26%|██▌       | 261/998 [00:05<00:15, 46.54it/s]Loading examples:  27%|██▋       | 269/998 [00:06<00:13, 53.99it/s]Loading examples:  28%|██▊       | 275/998 [00:06<00:14, 49.11it/s]Loading examples:  28%|██▊       | 281/998 [00:06<00:16, 44.30it/s]Loading examples:  29%|██▊       | 286/998 [00:06<00:19, 36.42it/s]Loading examples:  29%|██▉       | 290/998 [00:06<00:19, 35.99it/s]Loading examples:  29%|██▉       | 294/998 [00:06<00:19, 35.71it/s]Loading examples:  30%|██▉       | 299/998 [00:06<00:18, 37.93it/s]Loading examples:  30%|███       | 303/998 [00:07<00:19, 34.97it/s]Loading examples:  31%|███       | 307/998 [00:07<00:19, 34.57it/s]Loading examples:  31%|███▏      | 314/998 [00:07<00:16, 41.21it/s]Loading examples:  32%|███▏      | 319/998 [00:07<00:16, 41.57it/s]Loading examples:  32%|███▏      | 324/998 [00:07<00:19, 34.06it/s]Loading examples:  33%|███▎      | 328/998 [00:07<00:19, 34.50it/s]Loading examples:  33%|███▎      | 333/998 [00:07<00:18, 35.13it/s]Loading examples:  34%|███▍      | 337/998 [00:08<00:22, 28.94it/s]Loading examples:  34%|███▍      | 342/998 [00:08<00:22, 29.68it/s]Loading examples:  35%|███▍      | 347/998 [00:08<00:19, 32.67it/s]Loading examples:  35%|███▌      | 353/998 [00:08<00:17, 37.24it/s]Loading examples:  36%|███▌      | 357/998 [00:08<00:17, 37.11it/s]Loading examples:  36%|███▌      | 361/998 [00:08<00:16, 37.60it/s]Loading examples:  37%|███▋      | 365/998 [00:08<00:17, 37.13it/s]Loading examples:  37%|███▋      | 369/998 [00:09<00:19, 32.47it/s]Loading examples:  38%|███▊      | 375/998 [00:09<00:17, 35.73it/s]Loading examples:  38%|███▊      | 379/998 [00:09<00:18, 32.94it/s]Loading examples:  38%|███▊      | 384/998 [00:09<00:16, 36.20it/s]Loading examples:  39%|███▉      | 389/998 [00:09<00:15, 39.30it/s]Loading examples:  39%|███▉      | 394/998 [00:09<00:14, 40.93it/s]Loading examples:  40%|███▉      | 399/998 [00:09<00:15, 39.71it/s]Loading examples:  41%|████      | 405/998 [00:09<00:15, 37.38it/s]Loading examples:  41%|████      | 410/998 [00:10<00:15, 39.19it/s]Loading examples:  42%|████▏     | 415/998 [00:10<00:14, 40.85it/s]Loading examples:  42%|████▏     | 423/998 [00:10<00:13, 41.61it/s]Loading examples:  43%|████▎     | 428/998 [00:10<00:13, 42.49it/s]Loading examples:  43%|████▎     | 433/998 [00:10<00:17, 32.33it/s]Loading examples:  44%|████▍     | 437/998 [00:10<00:18, 29.82it/s]Loading examples:  44%|████▍     | 443/998 [00:10<00:16, 33.93it/s]Loading examples:  45%|████▍     | 447/998 [00:11<00:15, 34.68it/s]Loading examples:  45%|████▌     | 454/998 [00:11<00:13, 41.55it/s]Loading examples:  46%|████▌     | 459/998 [00:11<00:13, 39.17it/s]Loading examples:  46%|████▋     | 464/998 [00:11<00:15, 35.47it/s]Loading examples:  47%|████▋     | 469/998 [00:11<00:14, 37.75it/s]Loading examples:  47%|████▋     | 474/998 [00:11<00:13, 40.12it/s]Loading examples:  48%|████▊     | 479/998 [00:11<00:14, 35.48it/s]Loading examples:  49%|████▉     | 487/998 [00:12<00:11, 45.62it/s]Loading examples:  49%|████▉     | 493/998 [00:12<00:12, 40.48it/s]Loading examples:  50%|████▉     | 498/998 [00:12<00:13, 37.64it/s]Loading examples:  50%|█████     | 503/998 [00:12<00:14, 34.96it/s]Loading examples:  51%|█████     | 509/998 [00:12<00:12, 38.26it/s]Loading examples:  52%|█████▏    | 514/998 [00:12<00:12, 39.26it/s]Loading examples:  52%|█████▏    | 519/998 [00:12<00:11, 41.65it/s]Loading examples:  53%|█████▎    | 525/998 [00:13<00:10, 44.31it/s]Loading examples:  53%|█████▎    | 530/998 [00:13<00:11, 41.74it/s]Loading examples:  54%|█████▎    | 536/998 [00:13<00:12, 38.22it/s]Loading examples:  54%|█████▍    | 543/998 [00:13<00:10, 44.33it/s]Loading examples:  55%|█████▌    | 549/998 [00:13<00:09, 45.52it/s]Loading examples:  56%|█████▌    | 555/998 [00:13<00:09, 47.81it/s]Loading examples:  56%|█████▌    | 560/998 [00:13<00:11, 38.89it/s]Loading examples:  57%|█████▋    | 567/998 [00:13<00:09, 44.91it/s]Loading examples:  57%|█████▋    | 572/998 [00:14<00:09, 44.97it/s]Loading examples:  58%|█████▊    | 577/998 [00:14<00:12, 34.00it/s]Loading examples:  58%|█████▊    | 582/998 [00:14<00:11, 35.35it/s]Loading examples:  59%|█████▉    | 588/998 [00:14<00:10, 38.67it/s]Loading examples:  59%|█████▉    | 593/998 [00:14<00:11, 35.90it/s]Loading examples:  60%|█████▉    | 597/998 [00:14<00:11, 34.33it/s]Loading examples:  60%|██████    | 601/998 [00:15<00:11, 33.95it/s]Loading examples:  61%|██████    | 607/998 [00:15<00:10, 36.10it/s]Loading examples:  61%|██████    | 611/998 [00:15<00:10, 36.36it/s]Loading examples:  62%|██████▏   | 616/998 [00:15<00:09, 38.33it/s]Loading examples:  62%|██████▏   | 621/998 [00:15<00:09, 39.81it/s]Loading examples:  63%|██████▎   | 626/998 [00:16<00:34, 10.85it/s]Loading examples:  63%|██████▎   | 632/998 [00:16<00:26, 14.02it/s]Loading examples:  64%|██████▎   | 636/998 [00:17<00:22, 15.94it/s]Loading examples:  64%|██████▍   | 641/998 [00:17<00:18, 19.74it/s]Loading examples:  65%|██████▍   | 645/998 [00:17<00:16, 21.82it/s]Loading examples:  65%|██████▌   | 650/998 [00:17<00:13, 25.89it/s]Loading examples:  66%|██████▌   | 656/998 [00:17<00:11, 29.80it/s]Loading examples:  66%|██████▌   | 660/998 [00:17<00:11, 30.31it/s]Loading examples:  67%|██████▋   | 664/998 [00:17<00:10, 32.10it/s]Loading examples:  67%|██████▋   | 668/998 [00:17<00:09, 33.71it/s]Loading examples:  68%|██████▊   | 674/998 [00:17<00:08, 40.06it/s]Loading examples:  68%|██████▊   | 679/998 [00:18<00:08, 39.33it/s]Loading examples:  69%|██████▊   | 684/998 [00:18<00:08, 39.25it/s]Loading examples:  69%|██████▉   | 689/998 [00:18<00:09, 33.90it/s]Loading examples:  70%|██████▉   | 698/998 [00:18<00:06, 44.61it/s]Loading examples:  70%|███████   | 703/998 [00:18<00:06, 42.87it/s]Loading examples:  71%|███████   | 708/998 [00:18<00:07, 40.12it/s]Loading examples:  72%|███████▏  | 716/998 [00:18<00:06, 46.24it/s]Loading examples:  72%|███████▏  | 722/998 [00:19<00:08, 32.60it/s]Loading examples:  73%|███████▎  | 728/998 [00:19<00:07, 37.38it/s]Loading examples:  73%|███████▎  | 733/998 [00:19<00:07, 36.82it/s]Loading examples:  74%|███████▍  | 738/998 [00:19<00:08, 31.81it/s]Loading examples:  75%|███████▍  | 744/998 [00:19<00:06, 36.63it/s]Loading examples:  75%|███████▌  | 750/998 [00:19<00:06, 41.09it/s]Loading examples:  76%|███████▌  | 755/998 [00:20<00:07, 30.71it/s]Loading examples:  76%|███████▋  | 761/998 [00:20<00:06, 34.96it/s]Loading examples:  77%|███████▋  | 766/998 [00:20<00:06, 35.36it/s]Loading examples:  77%|███████▋  | 770/998 [00:20<00:06, 36.05it/s]Loading examples:  78%|███████▊  | 774/998 [00:20<00:06, 36.49it/s]Loading examples:  78%|███████▊  | 778/998 [00:20<00:06, 34.61it/s]Loading examples:  78%|███████▊  | 782/998 [00:21<00:07, 30.35it/s]Loading examples:  79%|███████▉  | 786/998 [00:21<00:06, 31.18it/s]Loading examples:  79%|███████▉  | 790/998 [00:21<00:06, 31.68it/s]Loading examples:  80%|███████▉  | 796/998 [00:21<00:05, 37.99it/s]Loading examples:  81%|████████  | 804/998 [00:21<00:04, 46.87it/s]Loading examples:  81%|████████▏ | 812/998 [00:21<00:03, 53.01it/s]Loading examples:  82%|████████▏ | 818/998 [00:21<00:03, 53.26it/s]Loading examples:  83%|████████▎ | 824/998 [00:21<00:04, 41.15it/s]Loading examples:  83%|████████▎ | 830/998 [00:22<00:03, 44.28it/s]Loading examples:  84%|████████▎ | 835/998 [00:22<00:04, 38.40it/s]Loading examples:  84%|████████▍ | 843/998 [00:22<00:03, 46.36it/s]Loading examples:  85%|████████▌ | 849/998 [00:22<00:03, 45.35it/s]Loading examples:  86%|████████▌ | 857/998 [00:22<00:02, 52.94it/s]Loading examples:  86%|████████▋ | 863/998 [00:22<00:03, 41.18it/s]Loading examples:  87%|████████▋ | 868/998 [00:22<00:03, 41.46it/s]Loading examples:  87%|████████▋ | 873/998 [00:23<00:02, 41.98it/s]Loading examples:  88%|████████▊ | 878/998 [00:23<00:02, 43.36it/s]Loading examples:  88%|████████▊ | 883/998 [00:23<00:03, 37.16it/s]Loading examples:  89%|████████▉ | 888/998 [00:23<00:02, 37.52it/s]Loading examples:  89%|████████▉ | 893/998 [00:23<00:02, 39.44it/s]Loading examples:  90%|████████▉ | 898/998 [00:23<00:02, 39.86it/s]Loading examples:  91%|█████████ | 904/998 [00:23<00:02, 43.81it/s]Loading examples:  91%|█████████ | 909/998 [00:23<00:02, 43.66it/s]Loading examples:  92%|█████████▏| 914/998 [00:24<00:01, 42.58it/s]Loading examples:  92%|█████████▏| 919/998 [00:24<00:01, 41.75it/s]Loading examples:  93%|█████████▎| 924/998 [00:24<00:01, 42.31it/s]Loading examples:  93%|█████████▎| 929/998 [00:24<00:01, 40.05it/s]Loading examples:  94%|█████████▎| 934/998 [00:24<00:01, 35.47it/s]Loading examples:  94%|█████████▍| 940/998 [00:24<00:01, 40.75it/s]Loading examples:  95%|█████████▍| 945/998 [00:25<00:02, 23.52it/s]Loading examples:  95%|█████████▌| 950/998 [00:25<00:01, 26.04it/s]Loading examples:  96%|█████████▌| 954/998 [00:25<00:01, 24.13it/s]Loading examples:  96%|█████████▌| 959/998 [00:25<00:01, 27.53it/s]Loading examples:  97%|█████████▋| 965/998 [00:25<00:01, 31.85it/s]Loading examples:  97%|█████████▋| 969/998 [00:25<00:00, 32.46it/s]Loading examples:  98%|█████████▊| 974/998 [00:25<00:00, 35.97it/s]Loading examples:  98%|█████████▊| 982/998 [00:26<00:00, 46.26it/s]Loading examples:  99%|█████████▉| 988/998 [00:26<00:00, 37.70it/s]Loading examples:  99%|█████████▉| 993/998 [00:26<00:00, 37.75it/s]Loading examples: 100%|██████████| 998/998 [00:26<00:00, 40.44it/s]Loading examples: 100%|██████████| 998/998 [00:26<00:00, 37.61it/s]
+Saved graph_dump/graph_1.csv
+Saved graph_dump/graph_2.csv
+Saved graph_dump/graph_3.csv
+Saved graph_dump/graph_4.csv
+Saved graph_dump/graph_5.csv
+# of documents 998.
+# of positive examples 11470.
+# of negative examples 384102.
+# of HTS graph edges by type (unique undirected pairs):
+  type 1: 8235108
+  type 2: 4117554
+  type 3: 4117554
+  type 4: 197786
+Train: 3053 docs, Dev: 998 docs
+/data1/kurumi/.conda/envs/ai_exp/lib/python3.10/site-packages/transformers/optimization.py:411: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use the PyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+/data1/kurumi/opt/run_optimized.py:137: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  scaler = GradScaler()
+Total steps: 22890, Warmup steps: 1373
+Train epoch:   0%|          | 0/30 [00:00<?, ?it/s]Epoch 0, Step 50/1526, Loss: 1.7221
+Epoch 0, Step 100/1526, Loss: 0.6306
+Epoch 0, Step 150/1526, Loss: 0.2792
+Epoch 0, Step 200/1526, Loss: 0.2886
+Epoch 0, Step 250/1526, Loss: 0.2498
+Epoch 0, Step 300/1526, Loss: 0.3200
+Epoch 0, Step 350/1526, Loss: 0.1502
+Epoch 0, Step 400/1526, Loss: 0.2668
+Epoch 0, Step 450/1526, Loss: 0.1579
+Epoch 0, Step 500/1526, Loss: 0.1277
+Epoch 0, Step 550/1526, Loss: 0.2721
+Epoch 0, Step 600/1526, Loss: 0.2108
+Epoch 0, Step 650/1526, Loss: 0.1588
+Epoch 0, Step 700/1526, Loss: 0.0934
+Epoch 0, Step 750/1526, Loss: 0.1749
+Epoch 0, Step 800/1526, Loss: 0.1157
+Epoch 0, Step 850/1526, Loss: 0.1307
+Epoch 0, Step 900/1526, Loss: 0.1198
+Epoch 0, Step 950/1526, Loss: 0.0895
+Epoch 0, Step 1000/1526, Loss: 0.0860
+Epoch 0, Step 1050/1526, Loss: 0.1315
+Epoch 0, Step 1100/1526, Loss: 0.0712
+Epoch 0, Step 1150/1526, Loss: 0.1147
+Epoch 0, Step 1200/1526, Loss: 0.0864
+Epoch 0, Step 1250/1526, Loss: 0.2258
+Epoch 0, Step 1300/1526, Loss: 0.1018
+Epoch 0, Step 1350/1526, Loss: 0.1509
+Epoch 0, Step 1400/1526, Loss: 0.1211
+Epoch 0, Step 1450/1526, Loss: 0.0613
+Epoch 0, Step 1500/1526, Loss: 0.1697
+Train epoch:   3%|▎         | 1/30 [12:54<6:14:12, 774.24s/it]Epoch 1, Step 50/1526, Loss: 0.1419
+Epoch 1, Step 100/1526, Loss: 0.0741
+Epoch 1, Step 150/1526, Loss: 0.1339
+Epoch 1, Step 200/1526, Loss: 0.0943
+Epoch 1, Step 250/1526, Loss: 0.0899
+Epoch 1, Step 300/1526, Loss: 0.2511
+Epoch 1, Step 350/1526, Loss: 0.1708
+Epoch 1, Step 400/1526, Loss: 0.1097
+Epoch 1, Step 450/1526, Loss: 0.2045
+Epoch 1, Step 500/1526, Loss: 0.0666
+Epoch 1, Step 550/1526, Loss: 0.0971
+Epoch 1, Step 600/1526, Loss: 0.0885
+Epoch 1, Step 650/1526, Loss: 0.0706
+Epoch 1, Step 700/1526, Loss: 0.0530
+Epoch 1, Step 750/1526, Loss: 0.1229
+Epoch 1, Step 800/1526, Loss: 0.0870
+Epoch 1, Step 850/1526, Loss: 0.1032
+Epoch 1, Step 900/1526, Loss: 0.0577
+Epoch 1, Step 950/1526, Loss: 0.0898
+Epoch 1, Step 1000/1526, Loss: 0.0918
+Epoch 1, Step 1050/1526, Loss: 0.0641
+Epoch 1, Step 1100/1526, Loss: 0.0788
+Epoch 1, Step 1150/1526, Loss: 0.0966
+Epoch 1, Step 1200/1526, Loss: 0.0958
+Epoch 1, Step 1250/1526, Loss: 0.1695
+Epoch 1, Step 1300/1526, Loss: 0.0701
+Epoch 1, Step 1350/1526, Loss: 0.0957
+Epoch 1, Step 1400/1526, Loss: 0.0778
+Epoch 1, Step 1450/1526, Loss: 0.2067
+Epoch 1, Step 1500/1526, Loss: 0.0736
+Train epoch:   7%|▋         | 2/30 [26:09<6:06:57, 786.33s/it]Epoch 2, Step 50/1526, Loss: 0.2689
+Epoch 2, Step 100/1526, Loss: 0.0720
+Epoch 2, Step 150/1526, Loss: 0.0791
+Epoch 2, Step 200/1526, Loss: 0.0681
+Epoch 2, Step 250/1526, Loss: 0.0712
+Epoch 2, Step 300/1526, Loss: 0.0498
+Epoch 2, Step 350/1526, Loss: 0.0984
+Epoch 2, Step 400/1526, Loss: 0.3147
+Epoch 2, Step 450/1526, Loss: 0.0415
+Epoch 2, Step 500/1526, Loss: 0.0960
+Epoch 2, Step 550/1526, Loss: 0.1121
+Epoch 2, Step 600/1526, Loss: 0.0866
+Epoch 2, Step 650/1526, Loss: 0.9581
+Epoch 2, Step 700/1526, Loss: 0.0483
+Epoch 2, Step 750/1526, Loss: 0.1285
+Epoch 2, Step 800/1526, Loss: 0.0338
+Epoch 2, Step 850/1526, Loss: 0.0761
+Epoch 2, Step 900/1526, Loss: 0.1554
+Epoch 2, Step 950/1526, Loss: 0.1122
+Epoch 2, Step 1000/1526, Loss: 0.0695
+Epoch 2, Step 1050/1526, Loss: 0.1098
+Epoch 2, Step 1100/1526, Loss: 0.0387
+Epoch 2, Step 1150/1526, Loss: 0.0384
+Epoch 2, Step 1200/1526, Loss: 0.0593
+Epoch 2, Step 1250/1526, Loss: 0.1181
+Epoch 2, Step 1300/1526, Loss: 0.1019
+Epoch 2, Step 1350/1526, Loss: 0.1251
+Epoch 2, Step 1400/1526, Loss: 0.0659
+Epoch 2, Step 1450/1526, Loss: 0.1356
+Epoch 2, Step 1500/1526, Loss: 0.0460
+Train epoch:  10%|█         | 3/30 [39:24<5:55:38, 790.30s/it]Epoch 3, Step 50/1526, Loss: 0.0470
+Epoch 3, Step 100/1526, Loss: 0.0416
+Epoch 3, Step 150/1526, Loss: 0.0922
+Epoch 3, Step 200/1526, Loss: 0.0406
+Epoch 3, Step 250/1526, Loss: 0.0655
+Epoch 3, Step 300/1526, Loss: 0.0738
+Epoch 3, Step 350/1526, Loss: 0.0583
+Epoch 3, Step 400/1526, Loss: 0.0707
+Epoch 3, Step 450/1526, Loss: 0.0736
+Epoch 3, Step 500/1526, Loss: 0.0529
+Epoch 3, Step 550/1526, Loss: 0.0518
+Epoch 3, Step 600/1526, Loss: 0.3319
+Epoch 3, Step 650/1526, Loss: 0.0816
+Epoch 3, Step 700/1526, Loss: 0.0648
+Epoch 3, Step 750/1526, Loss: 0.0555
+Epoch 3, Step 800/1526, Loss: 0.0536
+Epoch 3, Step 850/1526, Loss: 0.1062
+Epoch 3, Step 900/1526, Loss: 0.0773
+Epoch 3, Step 950/1526, Loss: 0.0572
+Epoch 3, Step 1000/1526, Loss: 0.0675
+Epoch 3, Step 1050/1526, Loss: 0.0989
+Epoch 3, Step 1100/1526, Loss: 0.1687
+Epoch 3, Step 1150/1526, Loss: 0.0706
+Epoch 3, Step 1200/1526, Loss: 0.1216
+Epoch 3, Step 1250/1526, Loss: 0.0563
+Epoch 3, Step 1300/1526, Loss: 0.0583
+Epoch 3, Step 1350/1526, Loss: 0.0700
+Epoch 3, Step 1400/1526, Loss: 0.0974
+Epoch 3, Step 1450/1526, Loss: 0.0543
+Epoch 3, Step 1500/1526, Loss: 0.0824
+Train epoch:  13%|█▎        | 4/30 [52:39<5:43:20, 792.33s/it]Epoch 4, Step 50/1526, Loss: 0.0529
+Epoch 4, Step 100/1526, Loss: 0.0791
+Epoch 4, Step 150/1526, Loss: 0.0627
+Epoch 4, Step 200/1526, Loss: 0.0599
+Epoch 4, Step 250/1526, Loss: 0.0827
+Epoch 4, Step 300/1526, Loss: 0.0725
+Epoch 4, Step 350/1526, Loss: 0.0442
+Epoch 4, Step 400/1526, Loss: 0.1336
+Epoch 4, Step 450/1526, Loss: 0.0951
+Epoch 4, Step 500/1526, Loss: 0.1637
+Epoch 4, Step 550/1526, Loss: 0.0820
+Epoch 4, Step 600/1526, Loss: 0.1037
+Epoch 4, Step 650/1526, Loss: 0.0253
+Epoch 4, Step 700/1526, Loss: 0.0616
+Epoch 4, Step 750/1526, Loss: 0.0571
+Epoch 4, Step 800/1526, Loss: 0.0379
+Epoch 4, Step 850/1526, Loss: 0.0501
+Epoch 4, Step 900/1526, Loss: 0.0503
+Epoch 4, Step 950/1526, Loss: 0.0822
+Epoch 4, Step 1000/1526, Loss: 0.1214
+Epoch 4, Step 1050/1526, Loss: 0.0850
+Epoch 4, Step 1100/1526, Loss: 0.0754
+Epoch 4, Step 1150/1526, Loss: 0.0597
+Epoch 4, Step 1200/1526, Loss: 0.0947
+Epoch 4, Step 1250/1526, Loss: 0.0496
+Epoch 4, Step 1300/1526, Loss: 0.0611
+Epoch 4, Step 1350/1526, Loss: 0.0411
+Epoch 4, Step 1400/1526, Loss: 0.0724
+Epoch 4, Step 1450/1526, Loss: 0.0738
+Epoch 4, Step 1500/1526, Loss: 0.0554
+Train epoch:  17%|█▋        | 5/30 [1:05:52<5:30:17, 792.70s/it]Epoch 5, Step 50/1526, Loss: 0.1066
+Epoch 5, Step 100/1526, Loss: 0.0454
+Epoch 5, Step 150/1526, Loss: 0.0573
+Epoch 5, Step 200/1526, Loss: 0.0434
+Epoch 5, Step 250/1526, Loss: 0.0717
+Epoch 5, Step 300/1526, Loss: 0.0304
+Epoch 5, Step 350/1526, Loss: 0.0441
+Epoch 5, Step 400/1526, Loss: 0.1014
+Epoch 5, Step 450/1526, Loss: 0.0638
+Epoch 5, Step 500/1526, Loss: 0.0544
+Epoch 5, Step 550/1526, Loss: 0.0980
+Epoch 5, Step 600/1526, Loss: 0.0539
+Epoch 5, Step 650/1526, Loss: 0.0333
+Epoch 5, Step 700/1526, Loss: 0.0397
+Epoch 5, Step 750/1526, Loss: 0.1171
+Epoch 5, Step 800/1526, Loss: 0.0761
+Epoch 5, Step 850/1526, Loss: 0.0876
+Epoch 5, Step 900/1526, Loss: 0.0346
+Epoch 5, Step 950/1526, Loss: 0.0976
+Epoch 5, Step 1000/1526, Loss: 0.0489
+Epoch 5, Step 1050/1526, Loss: 0.0720
+Epoch 5, Step 1100/1526, Loss: 0.0381
+Epoch 5, Step 1150/1526, Loss: 0.0684
+Epoch 5, Step 1200/1526, Loss: 0.0645
+Epoch 5, Step 1250/1526, Loss: 0.0773
+Epoch 5, Step 1300/1526, Loss: 0.0688
+Epoch 5, Step 1350/1526, Loss: 0.0799
+Epoch 5, Step 1400/1526, Loss: 0.0386
+Epoch 5, Step 1450/1526, Loss: 0.0683
+Epoch 5, Step 1500/1526, Loss: 0.0626
+Train epoch:  20%|██        | 6/30 [1:19:10<5:17:41, 794.22s/it]Epoch 6, Step 50/1526, Loss: 0.0922
+Epoch 6, Step 100/1526, Loss: 0.0397
+Epoch 6, Step 150/1526, Loss: 0.1095
+Epoch 6, Step 200/1526, Loss: 0.0722
+Epoch 6, Step 250/1526, Loss: 0.0533
+Epoch 6, Step 300/1526, Loss: 0.0394
+Epoch 6, Step 350/1526, Loss: 0.0342
+Epoch 6, Step 400/1526, Loss: 0.0756
+Epoch 6, Step 450/1526, Loss: 0.0499
+Epoch 6, Step 500/1526, Loss: 0.0863
+Epoch 6, Step 550/1526, Loss: 0.1017
+Epoch 6, Step 600/1526, Loss: 0.0219
+Epoch 6, Step 650/1526, Loss: 0.0410
+Epoch 6, Step 700/1526, Loss: 0.0709
+Epoch 6, Step 750/1526, Loss: 0.0529
+Epoch 6, Step 800/1526, Loss: 0.0458
+Epoch 6, Step 850/1526, Loss: 0.0666
+Epoch 6, Step 900/1526, Loss: 0.0328
+Epoch 6, Step 950/1526, Loss: 0.0767
+Epoch 6, Step 1000/1526, Loss: 0.0325
+Epoch 6, Step 1050/1526, Loss: 0.0257
+Epoch 6, Step 1100/1526, Loss: 0.0434
+Epoch 6, Step 1150/1526, Loss: 0.0855
+Epoch 6, Step 1200/1526, Loss: 0.0187
+Epoch 6, Step 1250/1526, Loss: 0.0637
+Epoch 6, Step 1300/1526, Loss: 0.0752
+Epoch 6, Step 1350/1526, Loss: 0.0279
+Epoch 6, Step 1400/1526, Loss: 0.0881
+Epoch 6, Step 1450/1526, Loss: 0.0577
+Epoch 6, Step 1500/1526, Loss: 0.0741
+Train epoch:  23%|██▎       | 7/30 [1:32:24<5:04:27, 794.24s/it]Epoch 7, Step 50/1526, Loss: 0.0680
+Epoch 7, Step 100/1526, Loss: 0.0538
+Epoch 7, Step 150/1526, Loss: 0.0639
+Epoch 7, Step 200/1526, Loss: 0.0474
+Epoch 7, Step 250/1526, Loss: 0.1174
+Epoch 7, Step 300/1526, Loss: 0.0346
+Epoch 7, Step 350/1526, Loss: 0.0303
+Epoch 7, Step 400/1526, Loss: 0.0697
+Epoch 7, Step 450/1526, Loss: 0.0315
+Epoch 7, Step 500/1526, Loss: 0.0436
+Epoch 7, Step 550/1526, Loss: 0.0437
+Epoch 7, Step 600/1526, Loss: 0.0484
+Epoch 7, Step 650/1526, Loss: 0.0534
+Epoch 7, Step 700/1526, Loss: 0.0739
+Epoch 7, Step 750/1526, Loss: 0.0283
+Epoch 7, Step 800/1526, Loss: 0.0752
+Epoch 7, Step 850/1526, Loss: 0.0310
+Epoch 7, Step 900/1526, Loss: 0.0741
+Epoch 7, Step 950/1526, Loss: 0.0613
+Epoch 7, Step 1000/1526, Loss: 0.0650
+Epoch 7, Step 1050/1526, Loss: 0.0834
+Epoch 7, Step 1100/1526, Loss: 0.0629
+Epoch 7, Step 1150/1526, Loss: 0.0307
+Epoch 7, Step 1200/1526, Loss: 0.0957
+Epoch 7, Step 1250/1526, Loss: 0.0381
+Epoch 7, Step 1300/1526, Loss: 0.0723
+Epoch 7, Step 1350/1526, Loss: 0.0575
+Epoch 7, Step 1400/1526, Loss: 0.0647
+Epoch 7, Step 1450/1526, Loss: 0.0598
+Epoch 7, Step 1500/1526, Loss: 0.0468
+Train epoch:  27%|██▋       | 8/30 [1:45:40<4:51:25, 794.80s/it]Epoch 8, Step 50/1526, Loss: 0.0500
+Epoch 8, Step 100/1526, Loss: 0.0624
+Epoch 8, Step 150/1526, Loss: 0.0710
+Epoch 8, Step 200/1526, Loss: 0.1155
+Epoch 8, Step 250/1526, Loss: 0.0415
+Epoch 8, Step 300/1526, Loss: 0.0114
+Epoch 8, Step 350/1526, Loss: 0.0917
+Epoch 8, Step 400/1526, Loss: 0.0268
+Epoch 8, Step 450/1526, Loss: 0.0540
+Epoch 8, Step 500/1526, Loss: 0.0283
+Epoch 8, Step 550/1526, Loss: 0.1036
+Epoch 8, Step 600/1526, Loss: 0.0493
+Epoch 8, Step 650/1526, Loss: 0.0584
+Epoch 8, Step 700/1526, Loss: 0.0347
+Epoch 8, Step 750/1526, Loss: 0.0960
+Epoch 8, Step 800/1526, Loss: 0.0579
+Epoch 8, Step 850/1526, Loss: 0.0723
+Epoch 8, Step 900/1526, Loss: 0.0426
+Epoch 8, Step 950/1526, Loss: 0.0566
+Epoch 8, Step 1000/1526, Loss: 0.0262
+Epoch 8, Step 1050/1526, Loss: 0.0305
+Epoch 8, Step 1100/1526, Loss: 0.0187
+Epoch 8, Step 1150/1526, Loss: 0.0420
+Epoch 8, Step 1200/1526, Loss: 0.0346
+Epoch 8, Step 1250/1526, Loss: 0.0809
+Epoch 8, Step 1300/1526, Loss: 0.0329
+Epoch 8, Step 1350/1526, Loss: 0.0131
+Epoch 8, Step 1400/1526, Loss: 0.0422
+Epoch 8, Step 1450/1526, Loss: 0.0623
+Epoch 8, Step 1500/1526, Loss: 0.0375
+Train epoch:  30%|███       | 9/30 [1:58:56<4:38:18, 795.16s/it]Epoch 9, Step 50/1526, Loss: 0.1022
+Epoch 9, Step 100/1526, Loss: 0.0361
+Epoch 9, Step 150/1526, Loss: 0.0578
+Epoch 9, Step 200/1526, Loss: 0.0508
+Epoch 9, Step 250/1526, Loss: 0.0360
+Epoch 9, Step 300/1526, Loss: 0.0525
+Epoch 9, Step 350/1526, Loss: 0.0563
+Epoch 9, Step 400/1526, Loss: 0.0485
+Epoch 9, Step 450/1526, Loss: 0.0659
+Epoch 9, Step 500/1526, Loss: 0.0572
+Epoch 9, Step 550/1526, Loss: 0.0169
+Epoch 9, Step 600/1526, Loss: 0.0426
+Epoch 9, Step 650/1526, Loss: 0.0457
+Epoch 9, Step 700/1526, Loss: 0.0383
+Epoch 9, Step 750/1526, Loss: 0.0556
+Epoch 9, Step 800/1526, Loss: 0.0289
+Epoch 9, Step 850/1526, Loss: 0.0320
+Epoch 9, Step 900/1526, Loss: 0.0681
+Epoch 9, Step 950/1526, Loss: 0.0479
+Epoch 9, Step 1000/1526, Loss: 0.0535
+Epoch 9, Step 1050/1526, Loss: 0.0595
+Epoch 9, Step 1100/1526, Loss: 0.0711
+Epoch 9, Step 1150/1526, Loss: 0.0403
+Epoch 9, Step 1200/1526, Loss: 0.0484
+Epoch 9, Step 1250/1526, Loss: 0.0727
+Epoch 9, Step 1300/1526, Loss: 0.0524
+Epoch 9, Step 1350/1526, Loss: 0.0486
+Epoch 9, Step 1400/1526, Loss: 0.0516
+Epoch 9, Step 1450/1526, Loss: 0.0337
+Epoch 9, Step 1500/1526, Loss: 0.0451
+Train epoch:  33%|███▎      | 10/30 [2:12:11<4:25:05, 795.27s/it]Epoch 10, Step 50/1526, Loss: 0.0286
+Epoch 10, Step 100/1526, Loss: 0.0266
+Epoch 10, Step 150/1526, Loss: 0.0250
+Epoch 10, Step 200/1526, Loss: 0.0233
+Epoch 10, Step 250/1526, Loss: 0.0575
+Epoch 10, Step 300/1526, Loss: 0.0337
+Epoch 10, Step 350/1526, Loss: 0.0543
+Epoch 10, Step 400/1526, Loss: 0.0596
+Epoch 10, Step 450/1526, Loss: 0.0468
+Epoch 10, Step 500/1526, Loss: 0.0563
+Epoch 10, Step 550/1526, Loss: 0.0343
+Epoch 10, Step 600/1526, Loss: 0.0357
+Epoch 10, Step 650/1526, Loss: 0.0417
+Epoch 10, Step 700/1526, Loss: 0.0670
+Epoch 10, Step 750/1526, Loss: 0.0732
+Epoch 10, Step 800/1526, Loss: 0.0359
+Epoch 10, Step 850/1526, Loss: 0.0342
+Epoch 10, Step 900/1526, Loss: 0.1368

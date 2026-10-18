@@ -1,12 +1,12 @@
 # Reproducibility Package — README
 
-**Paper:** *Architectural Modules versus Encoder Scale in Document-Level Relation Extraction: A Controlled Reproducible Study*
+**Paper:** *Auditing gain attribution in modular document-level relation extraction: a controlled protocol and a reproducible defect diagnosis*
 
 This package lets you reproduce every table in the paper from scratch. All numbers
 are means over five random seeds (42, 123, 456, 789, 2024).
 
 > **Anonymous review note.** This repository accompanies a manuscript under
-> double-blind review. Author-identifying information has been removed for the
+> anonymous review. Author-identifying information has been removed for the
 > review process; please evaluate the work without attempting to identify the
 > authors. This link will be replaced by the final (attributed) repository upon
 > acceptance.
@@ -15,6 +15,14 @@ are means over five random seeds (42, 123, 456, 789, 2024).
 > (extract with `tar xzf logs.tgz`); it contains `logs_v3/` (encoder comparison,
 > Re-DocRED, sensitivity) and `logs_v3_final/` (the 8-configuration BERT ablation).
 > The no-document-prior logs are in `noprior/logs_v3/` (see Sect. 5.1 below).
+
+> **Correction patch and corrected runs (2026-10).** The released graph aggregation
+> (`graph_hts`) contained a batch-contamination defect that inflates development-set
+> predictions; the defect, its environment-guarded correction (`FIX_GRAPH=1`), the
+> validation experiments, and the corrected per-seed logs (backbone/full, five seeds;
+> dev F1 61.03/61.01, official test 0.61) are documented in `CORRECTION_NOTES.md` and
+> bundled in `logs_corrected/`. The original released-protocol artifacts are kept
+> unchanged below.
 
 ---
 

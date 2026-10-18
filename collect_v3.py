@@ -1,6 +1,6 @@
 import os, re, statistics, math, glob
 
-BASE = os.path.expanduser("~/docred_project/optimized/logs_v3")
+BASE = os.environ.get("LOGDIR", "/data1/kurumi/opt/logs_v3")
 SEEDS = [42, 123, 456, 789, 2024]
 CONFIGS = ["base", "ms", "gr", "cb", "msgr", "mscb", "grcb", "full"]
 
@@ -64,7 +64,7 @@ def report(prefix, label):
         sf = statistics.stdev(f1s) if len(f1s) > 1 else 0.0
         mi = statistics.mean(igns)
         line = f"{cfg:5s}: F1 {mf:.2f} +/- {sf:.2f}  IgnF1 {mi:.2f}  n={len(f1s)}"
-        if cfg != "base" and base_f1 and len(base_f1) == len(f1s):
+        if cfg != "base" and base_f1 and len(base_f1) == len(f1s) and len(f1s) >= 2:
             t, md, p = paired_ttest(f1s, base_f1)
             line += f"  dF1={md:+.2f}  t={t:.2f}"
             if p is not None:

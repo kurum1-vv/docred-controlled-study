@@ -329,6 +329,15 @@ def read_docred(file_in,
                     sent_labels.append(sent_evi)
                     neg_samples += 1
         hts_graph = create_hts_graph(hts, entities, sent_labels=sent_labels, edge_cfg=edge_cfg)
+
+        import os as _os
+        if _os.environ.get('SORT_HTS') == '1' and len(hts) > 0:
+            _order = sorted(range(len(hts)), key=lambda _i: (hts[_i][0], hts[_i][1]))
+            hts = [hts[_i] for _i in _order]
+            relations = [relations[_i] for _i in _order]
+            sent_labels = [sent_labels[_i] for _i in _order]
+            hts_graph = create_hts_graph(hts, entities, sent_labels=sent_labels, edge_cfg=edge_cfg)
+
         counts = count_hts_edge_types(hts_graph, num_types=4)
         for t, cnt in counts.items():
             edge_type_counts_total[t] += cnt
